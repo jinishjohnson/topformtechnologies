@@ -64,6 +64,20 @@
         ],
         "copyright": "TopForm Technologies. All rights reserved."
     },
+    "showcase": {
+        "badge": "TOPSOFT ONLINE",
+        "titleText": "Services Built Specifically ",
+        "titleHighlight": "For Your Business",
+        "description": "The ultimate Business Management Software, Modules including Inventory, Sales & Purchases, HRM, POS, Restuarent Managemen, Garrage Management, Tailoring Managemen, Waste Management, UAE-Vat & GST-India Integrated",
+        "primaryCta": {
+            "text": "Learn More",
+            "href": "#m_service"
+        },
+        "secondaryCta": {
+            "text": "TopSoft Demo",
+            "href": "/contact"
+        }
+    },
     "about": {
         "badge": "Who We Are",
         "title": "It's Innovative",
@@ -143,6 +157,67 @@
                 "title": "IT Solutions",
                 "subtitle": "End-to-end",
                 "iconSvg": "<svg class=\"w-5 h-5\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z\" /></svg>"
+            }
+        ]
+    },
+    "mService": {
+        "badge": "Our Sercices",
+        "titleText": "Services Built Specifically ",
+        "titleHighlight": "For Your Business",
+        "cards": [
+            {
+                "id": 1,
+                "title": "CCTV & Security Systems",
+                "desc": "A CCTV system, or closed-circuit television, consists of a network of strategically placed cameras, designed to record and capture footage at key points – entryways, secure rooms and things of that nature",
+                "image": "/assets/srv/cctv.png"
+            },
+            {
+                "id": 2,
+                "title": "Door Access & TNA Systems",
+                "desc": "As a company expands, security takes on greater significance. Traditionally, door locks have been used to provide access to the office or building, We also offer electronic access control with sliding and swing doors,",
+                "image": "/assets/srv/Door-Access-TNA-Systems.png"
+            },
+            {
+                "id": 3,
+                "title": "PABX & Telephone Systems",
+                "desc": "One technology that's commonly employed in the telecom sector is IP PBX. Another name for it is IP-PBX, or IP-based private branch exchange. It is regarded as the replacement for older phone systems.",
+                "image": "/assets/srv/telephone.png"
+            },
+            {
+                "id": 4,
+                "title": "Website Design & Development",
+                "desc": "Every successful business starts with a great website and we deliver you the same. Being the top-notch Website Designing Company In Dubai.",
+                "image": "/assets/srv/webdesign.png"
+            },
+            {
+                "id": 5,
+                "title": "Custom Software Developments",
+                "desc": "We believe that although web-based application development with cloud deployment is gaining ground, which could be used on standalone machines only",
+                "image": "/assets/srv/custom-soft.png"
+            },
+            {
+                "id": 6,
+                "title": "Mobile Application Development",
+                "desc": "We work to create stunning iPhone, iPad, Android Smartphone and tablet apps, developing projects for independent entrepreneurs.",
+                "image": "/assets/srv/mobile-app.png"
+            },
+            {
+                "id": 7,
+                "title": "Home & Office It Sollutions",
+                "desc": "We offer Home & industry leading IT solutions and support to a diverse client portfolio across industry sectors including financial services, pharmaceutical, professional services, retail and hospitality",
+                "image": "/assets/srv/home-office.png"
+            },
+            {
+                "id": 8,
+                "title": "Hardware & Software Sales",
+                "desc": "We Best Hardware Consultant in dubai, and we also provide software services, we are one stop sollution for all Your Hardware & Software Needs.Acknowledge the wants of the customer and enlighten them on the",
+                "image": "/assets/srv/hardware-software.png"
+            },
+            {
+                "id": 9,
+                "title": "ERP & Inventory Applications",
+                "desc": "ERP helps businesses make better decisions by providing accurate inventory data. ERP inventory management systems enable businesses to control their logistics, operations, finance,",
+                "image": "/assets/srv/erp.png"
             }
         ]
     }

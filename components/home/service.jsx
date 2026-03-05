@@ -1,15 +1,50 @@
-import React from 'react';
+"use client";
+// only for this section i add a parallex GSAP scroll which i know.i didnt include in other sections.
+import React, { useRef } from 'react';
 import data from '../../data.json';
 import Link from 'next/link';
+import LottieAnimationMbl from '../LottieMbl';
+import gsap from 'gsap';
+import { useGSAP } from '@gsap/react';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
 
 const Service = () => {
     const serviceData = data.service;
+    const containerRef = useRef(null);
+    const textRef = useRef(null);
+    const lottieRef = useRef(null);
+
+    useGSAP(() => {
+        gsap.to(textRef.current, {
+            y: -80,
+            ease: "none",
+            scrollTrigger: {
+                trigger: containerRef.current,
+                start: "top center",
+                end: "bottom top",
+                scrub: 1
+            }
+        });
+
+        gsap.to(lottieRef.current, {
+            y: 80,
+            ease: "none",
+            scrollTrigger: {
+                trigger: containerRef.current,
+                start: "top center",
+                end: "bottom top",
+                scrub: 1
+            }
+        });
+    }, { scope: containerRef });
 
     return (
-        <section className="w-full py-20 lg:py-32 bg-gray-50" id="service">
+        <section ref={containerRef} className="w-full py-20 lg:py-32 bg-gray-50 overflow-hidden" id="service">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex flex-col lg:flex-row items-center gap-16">
-                    <div className="w-full lg:w-1/2 flex flex-col justify-center text-center lg:text-left order-2 lg:order-2">
+                    <div ref={textRef} className="w-full lg:w-1/2 flex flex-col justify-center text-center lg:text-left order-2 lg:order-2">
                         <div className="inline-block mb-4">
                             <span className="bg-blue-100 text-blue-700 font-semibold px-4 py-1.5 rounded-full text-sm uppercase tracking-wider">
                                 {serviceData.badge}
@@ -36,18 +71,8 @@ const Service = () => {
                     </div>
 
 
-                    <div className="w-full lg:w-1/2 order-1 lg:order-1">
-                        <div className="relative rounded-3xl overflow-hidden shadow-2xl group">
-                            <div className="absolute -inset-4 opacity-20 group-hover:opacity-30 blur-lg transition duration-500"></div>
-
-                            <img
-                                src={serviceData.image.src}
-                                alt={serviceData.image.alt}
-                                className="relative z-10 w-full h-auto max-h-[500px] object-contain rounded-3xl transform transition duration-700 "
-                            />
-
-
-                        </div>
+                    <div ref={lottieRef} className="w-full lg:w-1/2 flex items-center justify-center order-1 lg:order-1 h-auto min-h-[400px]">
+                        <LottieAnimationMbl />
                     </div>
 
                 </div>
