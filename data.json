@@ -12,11 +12,51 @@
             },
             {
                 "name": "Service",
-                "href": "/service"
+                "href": "/service",
+                "sublinks": [
+                    {
+                        "name": "CCTV & Security",
+                        "href": "/service#cctv"
+                    },
+                    {
+                        "name": "Access Control",
+                        "href": "/service#door-access"
+                    },
+                    {
+                        "name": "PABX & Telephone",
+                        "href": "/service#pabx"
+                    },
+                    {
+                        "name": "Web Design",
+                        "href": "/service#webdesign"
+                    },
+                    {
+                        "name": "Software Development",
+                        "href": "/service#software"
+                    },
+                    {
+                        "name": "ERP Systems",
+                        "href": "/service#erp"
+                    }
+                ]
             },
             {
                 "name": "Company",
-                "href": "/company"
+                "href": "/company",
+                "sublinks": [
+                    {
+                        "name": "About Us",
+                        "href": "/about"
+                    },
+                    {
+                        "name": "Our Vision",
+                        "href": "/company#vision"
+                    },
+                    {
+                        "name": "Certifications",
+                        "href": "/about#certifications"
+                    }
+                ]
             },
             {
                 "name": "Contact",
@@ -218,6 +258,40 @@
                 "title": "ERP & Inventory Applications",
                 "desc": "ERP helps businesses make better decisions by providing accurate inventory data. ERP inventory management systems enable businesses to control their logistics, operations, finance,",
                 "image": "/assets/srv/erp.png"
+            }
+        ]
+    },
+    "certify": {
+        "title": "Our",
+        "description": "Topform Technologies is a licensed and authorized provider of CCTV and IT services in the UAE. We are proud to be certified by the following authorities:",
+        "image": "/assets/authority_logo.png",
+        "titleHighlight": "Certifications"
+    },
+    "cardData": {
+        "card": [
+            {
+                "id": 1,
+                "title": "cctv & security systems",
+                "desc": "A CCTV system, or closed-circuit television, consists of a network of strategically placed cameras ",
+                "icon": "TbDeviceCctvFilled"
+            },
+            {
+                "id": 2,
+                "title": "cctv & security systems",
+                "desc": "A CCTV system, or closed-circuit television, consists of a network of strategically placed cameras ",
+                "icon": "GiDoorHandle"
+            },
+            {
+                "id": 3,
+                "title": "cctv & security systems",
+                "desc": "A CCTV system, or closed-circuit television, consists of a network of strategically placed cameras ",
+                "icon": "LuSmartphone"
+            },
+            {
+                "id": 4,
+                "title": "cctv & security systems",
+                "desc": "A CCTV system, or closed-circuit television, consists of a network of strategically placed cameras ",
+                "icon": "CgWebsite"
             }
         ]
     }

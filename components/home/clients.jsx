@@ -13,12 +13,13 @@ const clients = () => {
     ];
 
     return (
-        <section className='w-full bg-gray-50 flex flex-col items-start justify-start py-8 overflow-hidden'>
+        <section className='w-full bg-white flex flex-col items-start justify-start py-8 px-16 overflow-hidden'>
             <div className="px-8 md:px-16 w-full flex items-start justify-start mb-10">
                 <Title titleText="Our" titleHighlight="Clients" />
             </div>
 
             <div className='w-full relative flex overflow-hidden group px-8 md:px-16 py-4'>
+
                 <div className='flex whitespace-nowrap animate-marquee w-max'>
 
                     {clientLogos.map((logo, index) => (

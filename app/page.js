@@ -4,10 +4,12 @@ import Service from '../components/home/service';
 import MService from '../components/home/mService';
 import Showcase from '../components/home/showcase';
 import Clients from '../components/home/clients';
+import Certify from '../components/home/certify';
 import Contact from '../components/home/contact';
 import Map from '../components/home/map';
 
 export default function Home() {
+  
   return (
     <div className="flex flex-col min-h-screen">
       <Hero />
@@ -16,6 +18,7 @@ export default function Home() {
       <MService />
       <Showcase />
       <Clients />
+      <Certify />
       <Contact />
       <Map />
     </div>
