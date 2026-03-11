@@ -22,9 +22,9 @@ const MService = () => {
     };
 
     return (
-        <section className="w-full py-20 lg:py-32 bg-white flex flex-col justify-center overflow-hidden relative" id="m_service">
-            <div className="w-full px-8 md:px-16 mb-12 flex flex-col md:flex-row md:items-end justify-between gap-6 z-10">
-                <div>
+        <section className="w-full py-20 lg:py-32 max-sm:py-12 bg-white flex flex-col justify-center overflow-hidden relative" id="m_service">
+            <div className="w-full px-8 md:px-16 mb-12 flex flex-col md:flex-row md:items-end  justify-between gap-6 z-10 ">
+                <div className="max-sm:text-center max-sm:lead ">
                     <span className="bg-blue-100 text-blue-700 font-semibold px-4 py-1.5 rounded-full text-sm uppercase tracking-wider mb-4 inline-block">
                         {badge}
                     </span>

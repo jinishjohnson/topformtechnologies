@@ -41,7 +41,7 @@ const Service = () => {
     }, { scope: containerRef });
 
     return (
-        <section ref={containerRef} className="w-full py-20 lg:py-32 bg-gray-50 overflow-hidden" id="service">
+        <section ref={containerRef} className="w-full py-20 lg:py-32  overflow-hidden" id="service">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex flex-col lg:flex-row items-center gap-16">
                     <div ref={textRef} className="w-full lg:w-1/2 flex flex-col justify-center text-center lg:text-left order-2 lg:order-2">

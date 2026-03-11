@@ -45,11 +45,11 @@
                 "href": "/company",
                 "sublinks": [
                     {
-                        "name": "About Us",
+                        "name": "Company Profile",
                         "href": "/about"
                     },
                     {
-                        "name": "Our Vision",
+                        "name": "Carrers",
                         "href": "/company#vision"
                     },
                     {
@@ -130,6 +130,10 @@
         },
         "image": {
             "src": "/assets/abt.png",
+            "alt": "Technology team collaborating in modern office"
+        },
+        "imgBg": {
+            "src": "/assets/bg-sm.svg",
             "alt": "Technology team collaborating in modern office"
         },
         "services": [

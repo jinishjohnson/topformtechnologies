@@ -13,12 +13,12 @@ const clients = () => {
     ];
 
     return (
-        <section className='w-full bg-white flex flex-col items-start justify-start py-8 px-16 overflow-hidden'>
-            <div className="px-8 md:px-16 w-full flex items-start justify-start mb-10">
+        <section className='w-full bg-white flex flex-col items-start justify-start py-8 px-16 max-sm:px-2 overflow-hidden pb-14'>
+            <div className="px-[250px] max-md:px-16 max-sm:px-2 w-full flex items-start  justify-start mb-10 max-sm:mb-0 max-sm:text-center max-sm:leading-6 max-sm:justify-center max-sm:py-4">
                 <Title titleText="Our" titleHighlight="Clients" />
             </div>
 
-            <div className='w-full relative flex overflow-hidden group px-8 md:px-16 py-4'>
+            <div className='w-full relative flex overflow-hidden group px-8 max-md:px-16 max-sm:px-2 py-4'>
 
                 <div className='flex whitespace-nowrap animate-marquee w-max'>
 
@@ -26,7 +26,7 @@ const clients = () => {
                         <div key={index} className='flex-shrink-0 w-[180px] md:w-[200px] mx-8 flex  items-center justify-center grayscale hover:grayscale-0 opacity-70 hover:opacity-100 transition-all duration-600'>
                             <img src={logo} alt={`Client ${index + 1}`} className="w-full h-auto object-contain max-h-20" />
                         </div>
-                    ))}
+                    ))} 
 
                     {clientLogos.map((logo, index) => (
                         <div key={`dup-${index}`} className='flex-shrink-0 w-[150px] md:w-[200px] mx-8 flex items-center justify-center grayscale hover:grayscale-0 opacity-70 hover:opacity-100 transition-all duration-300'>

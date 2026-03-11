@@ -15,7 +15,7 @@ const Showcase = () => {
     } = data.showcase;
 
     return (
-        <section className='w-full bg-gray-50 flex items-center justify-center py-2 px-8 md:px-8'>
+        <section className='w-full bg-gradient-to-r from-cyan-500 to-white flex items-center justify-center py-2 px-8 md:px-8'>
             <div className='max-w-7xl w-full mx-auto flex flex-col lg:flex-row items-center gap-12 lg:gap-20'>
 
                 <div className='w-full lg:w-1/2 h-[400px] lg:h-[600px] flex items-center justify-center'>

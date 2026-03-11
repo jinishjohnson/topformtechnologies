@@ -1,16 +1,72 @@
-import React from 'react';
+"use client";
+import React, { useRef } from 'react';
 import Link from 'next/link';
 import data from '../../data.json';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
+import { useGSAP } from '@gsap/react';
+
+if (typeof window !== "undefined") {
+    gsap.registerPlugin(ScrollTrigger);
+}
 
 const About = () => {
-   
+
     const { about } = data;
+    const containerRef = useRef(null);
+    const bgRef = useRef(null);
+    const imageRef = useRef(null);
+
+    useGSAP(() => {
+
+        gsap.fromTo(containerRef.current,
+            { opacity: 0 },
+            {
+                opacity: 1,
+                duration: 1,
+                ease: "power2.inOut",
+                scrollTrigger: {
+                    trigger: containerRef.current,
+                    start: "top 80%",
+                    end: "bottom 20%",
+                    toggleActions: "play reverse play reverse"
+                }
+            }
+        );
+
+        gsap.to(bgRef.current, {
+            y: 100,
+            ease: "none",
+            scrollTrigger: {
+                trigger: containerRef.current,
+                start: "top bottom",
+                end: "bottom top",
+                scrub: true
+            }
+        });
+
+
+        gsap.to(imageRef.current, {
+            y: -50,
+            ease: "none",
+            scrollTrigger: {
+                trigger: containerRef.current,
+                start: "top bottom",
+                end: "bottom top",
+                scrub: 1
+            }
+        });
+
+    }, { scope: containerRef });
+
     return (
         <>
-            <section className="w-full py-20 lg:py-32 bg-white" id="about">
+            <section ref={containerRef} className="w-full py-20 lg:py-32 bg-white relative overflow-hidden" id="about">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="flex flex-col lg:flex-row items-center gap-16">
-
+                    <div className="flex relative z-[1] flex-col lg:flex-row items-center gap-16">
+                        <div ref={bgRef} className='absolute z-[-1] opacity-20 -top-10 right-0.5 w-full'>
+                            <img src={about.imgBg.src} alt={about.imgBg.alt} className="w-[320px] translate-y-20 object-cover" />
+                        </div>
                         <div className="w-full lg:w-1/2 flex flex-col justify-center text-center lg:text-left order-2 lg:order-1">
                             <div className="inline-block mb-4">
                                 <span className="bg-blue-50 text-blue-600 font-semibold px-4 py-1.5 rounded-full text-sm uppercase tracking-wider">
@@ -37,9 +93,8 @@ const About = () => {
                             </div>
                         </div>
 
-
                         <div className="w-full lg:w-1/2 order-1 lg:order-2">
-                            <div className="relative rounded-3xl overflow-hidden shadow-2xl group">
+                            <div ref={imageRef} className="relative rounded-3xl overflow-hidden shadow-2xl group">
                                 <div className="absolute -inset-4 opacity-20 group-hover:opacity-30 blur-lg transition duration-500"></div>
 
                                 <img
