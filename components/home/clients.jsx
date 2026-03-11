@@ -10,6 +10,14 @@ const clients = () => {
         '/assets/clients/set5.png',
         '/assets/clients/set6.png',
         '/assets/clients/set7.png',
+        '/assets/clients/set8.png',
+        '/assets/clients/set9.jpg',
+        '/assets/clients/set10.png',
+        '/assets/clients/set11.jpeg',
+        '/assets/clients/set12.png',
+        '/assets/clients/set13.png',
+
+
     ];
 
     return (
@@ -23,13 +31,13 @@ const clients = () => {
                 <div className='flex whitespace-nowrap animate-marquee w-max'>
 
                     {clientLogos.map((logo, index) => (
-                        <div key={index} className='flex-shrink-0 w-[180px] md:w-[200px] mx-8 flex  items-center justify-center grayscale hover:grayscale-0 opacity-70 hover:opacity-100 transition-all duration-600'>
+                        <div key={index} className='flex-shrink-0 w-[180px] md:w-[200px] mx-8 flex  items-center justify-center opacity-70 hover:opacity-100 transition-all duration-600'>
                             <img src={logo} alt={`Client ${index + 1}`} className="w-full h-auto object-contain max-h-20" />
                         </div>
-                    ))} 
+                    ))}
 
                     {clientLogos.map((logo, index) => (
-                        <div key={`dup-${index}`} className='flex-shrink-0 w-[150px] md:w-[200px] mx-8 flex items-center justify-center grayscale hover:grayscale-0 opacity-70 hover:opacity-100 transition-all duration-300'>
+                        <div key={`dup-${index}`} className='flex-shrink-0 w-[150px] md:w-[200px] mx-8 flex items-center justify-center opacity-70 hover:opacity-100 transition-all duration-300'>
                             <img src={logo} alt={`Client duplicate ${index + 1}`} className="w-full h-auto object-contain max-h-20" />
                         </div>
                     ))}

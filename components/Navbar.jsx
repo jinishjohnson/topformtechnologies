@@ -8,12 +8,12 @@ export default function Navbar() {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
     return (
-        <nav className="fixed w-full z-50 transition-all duration-300 backdrop-blur-md bg-[#091e57] ">
+        <nav className="fixed w-full z-50 transition-all duration-300 backdrop-blur-md bg-white/10 backdrop-blur-xl ">
             <div className="max-w-7xl mx-auto px-4 max-sm:px-2 max-lg:px-6 py-0">
                 <div className="flex justify-between items-center h-20">
                     <div className="flex-shrink-0 flex items-center">
                         <Link href="/" className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent transition-transform">
-                            <img src="/logo_web_dark.png" alt="Logo" width="150" height="150" />
+                            <img src="/logo.svg" alt="Logo" width="180" height="180" />
                         </Link>
                     </div>
                     <div className="hidden md:flex flex-1 justify-center space-x-8">
@@ -21,7 +21,7 @@ export default function Navbar() {
                             <div key={link.name} className="relative group">
                                 <Link
                                     href={link.href}
-                                    className="text-white hover:text-white px-3 py-2 rounded-full text-sm font-medium transition-colors hover:bg-blue-500/70 hover:backdrop-blur-lg hover:rounded-full hover:transition-all hover:duration-600 hover:shadow-lg hover:shadow-blue-500/30 flex items-center gap-1"
+                                    className="text-black hover:text-white px-3 py-2 rounded-full text-sm font-medium transition-colors hover:bg-blue-500 hover:backdrop-blur-lg hover:rounded-full hover:transition-all hover:duration-600 hover:shadow-lg hover:shadow-blue-500/30 flex items-center gap-1"
                                 >
                                     {link.name}
                                     {link.sublinks && (
@@ -58,7 +58,7 @@ export default function Navbar() {
                     <div className="md:hidden flex items-center">
                         <button
                             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                            className="text-white hover:text-blue-600 focus:outline-none focus:text-blue-600 transition-colors p-2"
+                            className="text-blue-600 hover:text-blue-600 focus:outline-none focus:text-blue-600 transition-colors p-2"
                             aria-label="Toggle menu"
                         >
                             <svg className="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">

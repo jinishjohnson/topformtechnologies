@@ -12,7 +12,7 @@ const certify = () => {
                 <div className='mx-auto flex flex-col max-w-7xl justify-start items-start max-md:justify-start max-sm:justify-center max-sm:items-center max-md:w-full h-full'>
                     <Title titleText={Data.certify.title} titleHighlight={Data.certify.titleHighlight} />
                     <div className='grid grid-cols-2 max-sm:grid-cols-1 max-md:grid-cols-2 mx-auto max-w-7xl justify-center items-center gap-5 h-auto'>
-                        <p className='font-mono text-xl bg-gradient-to-r from-taupe-400 to-blue-500 bg-clip-text text-transparent max-sm:text-sm max-sm:text-center'>{Data.certify.description}</p>
+                        <p className='font-mono text-xl bg-gradient-to-r from-taupe-400 to-blue-500 bg-clip-text text-transparent max-sm:text-sm max-sm:text-center'>{Data.certify.description}<span className='text-black ml-2 font-bold'>Sharjah, Dubai, Abu Dhabi</span></p>
                         <Image src={Data.certify.image} width={500} height={200} className='' alt="authority_logo" />
                     </div>
                 </div>

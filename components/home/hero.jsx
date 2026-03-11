@@ -72,11 +72,11 @@ export default function Hero() {
 
             {/* Content */}
             <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full mt-10">
-                <div className="max-w-2xl mx-auto sm:mx-0 text-center sm:text-left" ref={textRef}>
+                <div className="max-w-7xl mx-auto sm:mx-0 text-center sm:text-left" ref={textRef}>
                     <div className="text-[#5CB3FF] font-thin tracking-wide mb-3 text-sm sm:text-lg">
                         {slides[currentSlide].prefix}
                     </div>
-                    <h1 className="text-5xl sm:text-6xl md:text-7xl font-normal text-white leading-tight mb-8" style={{ whiteSpace: 'pre-line' }}>
+                    <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold  text-white leading-tight mb-8" style={{ whiteSpace: 'pre-line' }}>
                         {slides[currentSlide].heading}
                     </h1>
                     <div>

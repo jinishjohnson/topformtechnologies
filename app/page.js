@@ -9,7 +9,7 @@ import Contact from '../components/home/contact';
 import Map from '../components/home/map';
 
 export default function Home() {
-  
+
   return (
     <div className="flex flex-col min-h-screen">
       <Hero />
@@ -19,8 +19,8 @@ export default function Home() {
       <Showcase />
       <Clients />
       <Certify />
-      <Contact />
       <Map />
+      <Contact />
     </div>
   );
 }

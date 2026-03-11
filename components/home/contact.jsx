@@ -3,6 +3,9 @@ import React from "react";
 import Title from "../Title";
 import { useState } from "react";
 import data from "../../data.json";
+import { ShootingStars } from "../ui/shooting-stars";
+import { StarsBackground } from "../ui/stars-background";
+import LottieAnimationCta from "../LottieCta";
 
 const Contact = () => {
     const { about } = data;
@@ -38,51 +41,56 @@ const Contact = () => {
     };
     return (
 
-        <section className="w-full flex justify-center bg-gradient-to-br from-gray-50 to-gray-200 py-20 px-6 md:px-16">
-            <div className="max-w-7xl w-full flex flex-col lg:flex-row gap-12 lg:gap-16 items-center lg:items-start">
+        <section className="relative overflow-hidden w-full flex justify-center bg-white py-20 px-6 md:px-16">
+            <div className="absolute inset-0 z-0 pointer-events-none">
+                <StarsBackground />
+                <ShootingStars />
+            </div>
+            <div className="relative z-10 max-w-7xl w-full flex flex-col lg:flex-row gap-12 lg:gap-16 items-center lg:items-start">
 
                 {/* Left Side: Description and Image */}
                 <div className="w-full lg:w-5/12 flex flex-col items-center lg:items-start text-center lg:text-left">
                     <div className="w-full flex justify-center lg:justify-start mb-6">
-                        <Title titleText="Contact" titleHighlight="Us" />
+                        <h1 className='flex font-sans font-bold gap-2 text-2xl md:text-5xl lg:text-5xl font-black/90 text-blue-700 leading-snug '>
+                            Contact <br />
+                            <span className='text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500'>
+                                Us
+                            </span>
+                        </h1>
                     </div>
-                    <p className="text-gray-500 text-sm md:text-base mb-12 max-w-lg leading-relaxed">
+                    <p className="text-black/focus:ring-black/10 text-sm font-sans md:text-base mb-12 max-w-lg leading-relaxed">
                         We offer home & industry-leading IT solutions and support across
                         financial services, pharmaceutical, retail, hospitality and more.
                     </p>
                     <div className="relative">
-                        <div className="absolute -inset-4 bg-blue-200 rounded-full blur-3xl opacity-40 mix-blend-multiply transition duration-500 hover:opacity-60"></div>
-                        <img
-                            src={about.image.src}
-                            alt={about.image.alt}
-                            className="relative w-[320px] h-[320px] object-cover rounded-3xl shadow-xl transform hover:-translate-y-2 transition duration-500"
-                        />
+                        <div className="absolute -inset-4 bg-indigo-500 rounded-full blur-3xl opacity-20 mix-blend-screen transition duration-500 hover:opacity-40"></div>
+                        <LottieAnimationCta />
                     </div>
                 </div>
 
                 {/* Right Side: Form */}
                 <div className="w-full lg:w-7/12">
-                    <div className="w-full bg-white/70 backdrop-blur-xl shadow-2xl rounded-3xl p-8 md:p-12 border border-gray-200">
+                    <div className="w-full bg-white  backdrop-blur-xl shadow-xl rounded-3xl p-8 md:p-12 border border-black/15">
 
                         <form action="" className="space-y-6" onSubmit={onSubmit}>
 
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
 
                                 <div className="flex flex-col gap-2">
-                                    <label className="text-gray-600 text-sm font-medium">
+                                    <label className="text-white text-sm font-medium">
                                         Full Name
                                     </label>
                                     <input
                                         type="text"
                                         name="name"
-                                        placeholder="[Full Name]"
-                                        className="rounded-xl border border-gray-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all"
+                                        placeholder="Full Name"
+                                        className="rounded-xl bg-white border border-black/15 text-white placeholder-black/90 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-black/10 transition-all"
                                     />
                                 </div>
 
 
                                 <div className="flex flex-col gap-2">
-                                    <label className="text-gray-600 text-sm font-medium">
+                                    <label className="text-white text-sm font-medium">
 
                                         Email Address
                                     </label>
@@ -90,36 +98,36 @@ const Contact = () => {
 
                                         type="email"
                                         name="email"
-                                        placeholder="[EMAIL_ADDRESS]"
-                                        className="rounded-xl border border-gray-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all"
+                                        placeholder="Email Address"
+                                        className="rounded-xl bg-white border border-black/15 text-white placeholder-black/90 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-black/10 transition-all"
                                     />
                                 </div>
 
                                 <div className="flex flex-col gap-2">
-                                    <label className="text-gray-600 text-sm font-medium">
+                                    <label className="text-white text-sm font-medium">
                                         Phone Number
                                     </label>
                                     <input
                                         type="text"
                                         name="phone"
                                         placeholder="+971 50 123 4567"
-                                        className="rounded-xl border border-gray-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all"
+                                        className="rounded-xl bg-white border border-black/15 text-white placeholder-black/90 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-black/10 transition-all"
                                     />
                                 </div>
 
 
                                 <div className="flex flex-col gap-2">
-                                    <label className="text-gray-600 text-sm font-medium">
+                                    <label className="text-white text-sm font-medium">
                                         Select Service
                                     </label>
                                     <select
                                         name="service"
-                                        className="rounded-xl border border-gray-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all"
+                                        className="rounded-xl bg-white border border-black/15 text-black/90 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-black/10 transition-all"
                                     >
-                                        <option>Select Service</option>
-                                        <option>ERP & Inventory Systems</option>
-                                        <option>Data Analytics Solutions</option>
-                                        <option>Automated Workflows</option>
+                                        <option className="bg-white text-black/90">Select Service</option>
+                                        <option className="bg-white text-black/90">ERP & Inventory Systems</option>
+                                        <option className="bg-white text-black/90">Data Analytics Solutions</option>
+                                        <option className="bg-white text-black/90">Automated Workflows</option>
                                     </select>
                                 </div>
 
@@ -127,14 +135,14 @@ const Contact = () => {
 
 
                             <div className="flex flex-col gap-2">
-                                <label className="text-gray-600 text-sm font-medium">
+                                <label className="text-white text-sm font-medium">
                                     Message
                                 </label>
                                 <textarea
                                     name="message"
                                     rows="5"
                                     placeholder="Write your message..."
-                                    className="rounded-xl border border-gray-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all resize-none"
+                                    className="rounded-xl bg-white border border-black/15 text-white placeholder-black/90 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-black/10 transition-all resize-none"
                                 ></textarea>
                             </div>
 
@@ -149,7 +157,7 @@ const Contact = () => {
                             </div>
 
                         </form>
-                        <span>{result}</span>
+                        <span className="text-black mt-4 block text-center font-medium">{result}</span>
                     </div>
                 </div>
             </div>
