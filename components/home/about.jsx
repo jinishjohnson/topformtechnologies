@@ -74,7 +74,7 @@ const About = () => {
                                 </span>
                             </div>
                             <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight mb-6" style={{ whiteSpace: 'pre-line' }}>
-                                {about.title} <span className="text-blue-500">{about.titleHighlight}</span>
+                                {about.title} <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500">{about.titleHighlight}</span>
                             </h2>
                             <p className="text-md text-gray-600 mb-2 leading-relaxed max-w-2xl mx-auto lg:mx-0">
                                 {about.description}
@@ -100,7 +100,7 @@ const About = () => {
                                 <img
                                     src={about.image.src}
                                     alt={about.image.alt}
-                                    className="relative z-10 w-full h-auto max-h-[500px] object-contain rounded-3xl transform transition duration-700 group-hover:scale-105"
+                                    className="relative z-10 w-full h-auto max-h-[500px] object-cover rounded-3xl transform transition duration-700 group-hover:scale-105"
                                 />
 
                                 <div className="absolute z-20 bottom-0 left-1/2 -translate-x-1/2 bg-white/95 backdrop-blur-md p-6 rounded-2xl shadow-2xl border border-white/40 transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 w-[90%] sm:w-max mb-6">

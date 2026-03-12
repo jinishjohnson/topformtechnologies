@@ -29,7 +29,7 @@ const MService = () => {
                         {badge}
                     </span>
                     <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
-                        {titleText} <span className="text-blue-600"> {titleHighlight}</span>
+                        {titleText} <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500"> {titleHighlight}</span>
                     </h2>
                 </div>
 

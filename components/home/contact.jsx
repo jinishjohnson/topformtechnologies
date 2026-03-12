@@ -6,6 +6,9 @@ import data from "../../data.json";
 import { ShootingStars } from "../ui/shooting-stars";
 import { StarsBackground } from "../ui/stars-background";
 import LottieAnimationCta from "../LottieCta";
+import { FaLocationDot } from "react-icons/fa6";
+import { RiContactsBook3Fill } from "react-icons/ri";
+import { LuMails } from "react-icons/lu";
 
 const Contact = () => {
     const { about } = data;
@@ -58,18 +61,47 @@ const Contact = () => {
                             </span>
                         </h1>
                     </div>
-                    <p className="text-black/focus:ring-black/10 text-sm font-sans md:text-base mb-12 max-w-lg leading-relaxed">
-                        We offer home & industry-leading IT solutions and support across
-                        financial services, pharmaceutical, retail, hospitality and more.
-                    </p>
+
                     <div className="relative">
                         <div className="absolute -inset-4 bg-indigo-500 rounded-full blur-3xl opacity-20 mix-blend-screen transition duration-500 hover:opacity-40"></div>
                         <LottieAnimationCta />
                     </div>
+                    <div className="flex flex-col sm:flex-row gap-6 w-full">
+                        <div className="flex flex-col gap-6 w-full sm:w-1/2">
+                            <div className="w-full flex items-center gap-4 shadow-blue-500/10 shadow-lg bg-white/50 backdrop-blur-sm rounded-2xl p-5 border border-black/5 hover:scale-[1.02] transition-transform">
+                                <FaLocationDot className="text-blue-600 text-3xl shrink-0" />
+                                <a href="#" className="font-sans text-sm md:text-base text-gray-800 leading-snug">&#35;&#51;&#48;&#54;&#44;&#32;&#51;&#114;&#100;&#32;&#70;&#108;&#111;&#111;&#114;&#44;&#32;&#65;&#108;&#32;&#81;&#111;&#117;&#122;&#32;&#52;&#44;&#32;&#68;&#117;&#98;&#97;&#105;&#44;&#32;&#85;&#65;&#69;</a>
+                            </div>
+                            <div className="w-full flex items-center gap-4 shadow-blue-500/10 shadow-lg bg-white/50 backdrop-blur-sm rounded-2xl p-5 border border-black/5 hover:scale-[1.02] transition-transform">
+                                <RiContactsBook3Fill className="text-blue-600 text-3xl shrink-0" />
+                                <div className="flex flex-col gap-1">
+                                    <a className="font-sans text-sm md:text-base hover:text-blue-600 transition-colors text-gray-800" href="tel:&#43;&#57;&#55;&#49;&#53;&#54;&#54;&#54;&#52;&#52;&#56;&#49;&#53;">
+                                        &#43;&#57;&#55;&#49;&#32;&#53;&#54;&#32;&#54;&#54;&#52;&#32;&#52;&#56;&#49;&#51;
+                                    </a>
+                                    <a className="font-sans text-sm md:text-base hover:text-blue-600 transition-colors text-gray-800" href="tel:&#43;&#57;&#55;&#49;&#32;&#52;&#32;&#51;&#57;&#54;&#32;&#48;&#51;&#48;&#50;">
+                                        &#43;&#57;&#55;&#49;&#32;&#52;&#32;&#51;&#57;&#54;&#32;&#48;&#51;&#48;&#50;
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="w-full sm:w-1/2">
+                            <div className="w-full flex items-center gap-4 shadow-blue-500/10 shadow-lg bg-white/50 backdrop-blur-sm rounded-2xl p-5 border border-black/5 hover:scale-[1.02] transition-transform">
+                                <LuMails className="text-blue-600 text-3xl shrink-0" />
+                                <div className="flex flex-col gap-1 overflow-hidden">
+                                    <a className="text-sm md:text-base hover:text-blue-600 transition-colors text-gray-800 truncate" href="mailto:&#105;&#110;&#102;&#111;&#64;&#116;&#111;&#112;&#102;&#111;&#114;&#109;&#116;&#101;&#99;&#104;&#110;&#111;&#108;&#111;&#103;&#105;&#101;&#115;&#46;&#99;&#111;&#109;">
+                                        &#105;&#110;&#102;&#111;&#64;&#116;&#111;&#112;&#102;&#111;&#114;&#109;&#116;&#101;&#99;&#104;&#110;&#111;&#108;&#111;&#103;&#105;&#101;&#115;&#46;&#99;&#111;&#109;
+                                    </a>
+                                    <a className="text-sm md:text-base hover:text-blue-600 transition-colors text-gray-800 truncate" href="mailto:&#115;&#97;&#108;&#101;&#115;&#64;&#116;&#111;&#112;&#102;&#111;&#114;&#109;&#116;&#101;&#99;&#104;&#110;&#111;&#108;&#111;&#103;&#105;&#101;&#115;&#46;&#99;&#111;&#109;">
+                                        &#115;&#97;&#108;&#101;&#115;&#64;&#116;&#111;&#112;&#102;&#111;&#114;&#109;&#116;&#101;&#99;&#104;&#110;&#111;&#108;&#111;&#103;&#105;&#101;&#115;&#46;&#99;&#111;&#109;
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 {/* Right Side: Form */}
-                <div className="w-full lg:w-7/12">
+                <div className="w-full lg:w-6/14">
                     <div className="w-full bg-white  backdrop-blur-xl shadow-xl rounded-3xl p-8 md:p-12 border border-black/15">
 
                         <form action="" className="space-y-6" onSubmit={onSubmit}>
@@ -77,20 +109,20 @@ const Contact = () => {
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
 
                                 <div className="flex flex-col gap-2">
-                                    <label className="text-white text-sm font-medium">
+                                    <label className="text-blue-500 text-sm font-medium">
                                         Full Name
                                     </label>
                                     <input
                                         type="text"
                                         name="name"
                                         placeholder="Full Name"
-                                        className="rounded-xl bg-white border border-black/15 text-white placeholder-black/90 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-black/10 transition-all"
+                                        className="rounded-xl bg-white border border-black/15 text-blue-500 placeholder-black/20 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-black/10 transition-all"
                                     />
                                 </div>
 
 
                                 <div className="flex flex-col gap-2">
-                                    <label className="text-white text-sm font-medium">
+                                    <label className="text-blue-500 text-sm font-medium">
 
                                         Email Address
                                     </label>
@@ -99,30 +131,30 @@ const Contact = () => {
                                         type="email"
                                         name="email"
                                         placeholder="Email Address"
-                                        className="rounded-xl bg-white border border-black/15 text-white placeholder-black/90 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-black/10 transition-all"
+                                        className="rounded-xl bg-white border border-black/15 text-blue-500 placeholder-black/20 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-black/10 transition-all"
                                     />
                                 </div>
 
                                 <div className="flex flex-col gap-2">
-                                    <label className="text-white text-sm font-medium">
+                                    <label className="text-blue-500 text-sm font-medium">
                                         Phone Number
                                     </label>
                                     <input
                                         type="text"
                                         name="phone"
                                         placeholder="+971 50 123 4567"
-                                        className="rounded-xl bg-white border border-black/15 text-white placeholder-black/90 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-black/10 transition-all"
+                                        className="rounded-xl bg-white border border-black/15 text-blue-500 placeholder-black/20 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-black/10 transition-all"
                                     />
                                 </div>
 
 
                                 <div className="flex flex-col gap-2">
-                                    <label className="text-white text-sm font-medium">
+                                    <label className="text-blue-500 text-sm font-medium">
                                         Select Service
                                     </label>
                                     <select
                                         name="service"
-                                        className="rounded-xl bg-white border border-black/15 text-black/90 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-black/10 transition-all"
+                                        className="rounded-xl bg-white border border-black/15 text-black/20 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-black/10 transition-all"
                                     >
                                         <option className="bg-white text-black/90">Select Service</option>
                                         <option className="bg-white text-black/90">ERP & Inventory Systems</option>
@@ -135,14 +167,14 @@ const Contact = () => {
 
 
                             <div className="flex flex-col gap-2">
-                                <label className="text-white text-sm font-medium">
+                                <label className="text-blue-500 text-sm font-medium">
                                     Message
                                 </label>
                                 <textarea
                                     name="message"
                                     rows="5"
                                     placeholder="Write your message..."
-                                    className="rounded-xl bg-white border border-black/15 text-white placeholder-black/90 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-black/10 transition-all resize-none"
+                                    className="rounded-xl bg-white border border-black/15 text-blue-500 placeholder-black/20 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-black/10 transition-all resize-none"
                                 ></textarea>
                             </div>
 

@@ -12,6 +12,7 @@ html {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --banner-gradient: linear-gradient(120deg, #091e57 0%, #1f0b4d 35%, #4b1059 75%, #020617 100%);
+  --primary-gradient: linear-gradient(90deg, #15A5E7 0%, #1C2A73 100%);
   --font-sans: var(--font-sans);
   --font-mono: var(--font-montserrat);
   --color-sidebar-ring: var(--sidebar-ring);
@@ -143,9 +144,11 @@ body {
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
   }
+
   html {
     @apply font-sans;
   }

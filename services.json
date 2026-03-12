@@ -1,0 +1,173 @@
+[
+  {
+    "id": 1,
+    "slug": "cctv-security-systems",
+    "title": "CCTV & Security Systems",
+    "shortDesc": "A CCTV system, or closed-circuit television, consists of a network of strategically placed cameras, designed to record and capture footage at key points – entryways, secure rooms and things of that nature.",
+    "image": "/assets/srv/cctv.png",
+    "heroColor": "from-blue-900 to-indigo-800",
+    "badge": "Security",
+    "longDesc": "At Topform Technologies, we provide state-of-the-art CCTV and video surveillance solutions tailored to businesses and residences across the UAE. Our systems are designed to deter criminal activity, gather evidence, and give you 24/7 peace of mind.\n\nWe supply, install, and maintain top-brand IP cameras, HD analog systems, and NVR/DVR recording infrastructure. From a single-camera home setup to a multi-site enterprise network, we deliver scalable solutions that grow with you.",
+    "features": [
+      "HD & 4K IP Cameras",
+      "Night-vision and PTZ cameras",
+      "Remote monitoring via mobile app",
+      "NVR / DVR recording systems",
+      "Cloud & local storage options",
+      "Preventive maintenance contracts"
+    ],
+    "whyUs": "Our certified technicians handle end-to-end installation, configuration, and ongoing support. We only recommend equipment suited to your specific environment, ensuring you get maximum value."
+  },
+  {
+    "id": 2,
+    "slug": "door-access-tna-systems",
+    "title": "Door Access & TNA Systems",
+    "shortDesc": "As a company expands, security takes on greater significance. Traditionally, door locks have been used to provide access to the office or building, We also offer electronic access control with sliding and swing doors.",
+    "image": "/assets/srv/Door-Access-TNA-Systems.png",
+    "heroColor": "from-emerald-900 to-teal-800",
+    "badge": "Access Control",
+    "longDesc": "Topform Technologies delivers comprehensive electronic access control and Time & Attendance (TNA) solutions for businesses of all sizes in Dubai and the wider UAE. Replace traditional locks with smart, auditable systems that tell you exactly who entered — and when.\n\nOur TNA solutions integrate seamlessly with payroll software, eliminating manual timesheets and reducing errors. We support fingerprint, face recognition, RFID card, and PIN-based systems.",
+    "features": [
+      "Biometric fingerprint & face recognition",
+      "RFID card and PIN access",
+      "Electric sliding & swing door operators",
+      "Real-time attendance tracking",
+      "Payroll software integration",
+      "Multi-door and multi-site management"
+    ],
+    "whyUs": "We are authorized dealers for leading brands and offer professional installation, training, and annual maintenance contracts to ensure round-the-clock security."
+  },
+  {
+    "id": 3,
+    "slug": "pabx-telephone-systems",
+    "title": "PABX & Telephone Systems",
+    "shortDesc": "One technology that's commonly employed in the telecom sector is IP PBX. Another name for it is IP-PBX, or IP-based private branch exchange. It is regarded as the replacement for older phone systems.",
+    "image": "/assets/srv/telephone.png",
+    "heroColor": "from-purple-900 to-violet-800",
+    "badge": "Telecom",
+    "longDesc": "Topform Technologies supplies and installs modern PABX and IP-PBX telephone systems that keep your team connected — whether in-office, remote, or on the move. We help businesses upgrade from legacy phone lines to powerful, cloud-capable VoIP infrastructure.\n\nOur solutions support internal extensions, auto-attendants, call recording, conference bridges, and CRM integration, giving your business a professional telephony setup at a fraction of the traditional cost.",
+    "features": [
+      "IP-PBX & traditional PABX systems",
+      "VoIP & SIP trunk integration",
+      "Auto-attendant & IVR setup",
+      "Call recording and reporting",
+      "Conference bridge support",
+      "Remote extension & mobile softphone"
+    ],
+    "whyUs": "With decades of telecom experience, our engineers design systems that scale from 5 to 500 extensions, with minimal downtime during migration from legacy systems."
+  },
+  {
+    "id": 4,
+    "slug": "website-design-development",
+    "title": "Website Design & Development",
+    "shortDesc": "Every successful business starts with a great website and we deliver you the same. Being the top-notch Website Designing Company In Dubai.",
+    "image": "/assets/srv/webdesign.png",
+    "heroColor": "from-sky-900 to-blue-800",
+    "badge": "Web",
+    "longDesc": "Your website is often the first impression a customer has of your brand. Topform Technologies creates visually stunning, fast, and SEO-ready websites that convert visitors into clients.\n\nFrom landing pages to full-scale e-commerce platforms, we use modern frameworks like Next.js and React to deliver pixel-perfect designs with exceptional performance scores. Every site we build is mobile-first, accessible, and optimized for search engines.",
+    "features": [
+      "Custom UI/UX design",
+      "Next.js & React development",
+      "E-commerce & payment integration",
+      "SEO optimization & analytics",
+      "CMS integration (WordPress, Strapi)",
+      "Ongoing support & maintenance"
+    ],
+    "whyUs": "We don't use templates. Every website is designed from scratch to match your brand identity, business goals, and audience expectations."
+  },
+  {
+    "id": 5,
+    "slug": "custom-software-development",
+    "title": "Custom Software Development",
+    "shortDesc": "We believe that although web-based application development with cloud deployment is gaining ground, which could be used on standalone machines only.",
+    "image": "/assets/srv/custom-soft.png",
+    "heroColor": "from-orange-900 to-red-800",
+    "badge": "Software",
+    "longDesc": "Off-the-shelf software rarely fits your exact workflow. Topform Technologies builds custom software solutions that do exactly what your business needs — nothing more, nothing less.\n\nWhether it's an internal operations tool, a customer-facing portal, or a complex multi-module enterprise application, our developers translate your requirements into production-ready code. We follow agile methodology for iterative delivery, keeping you in control at every milestone.",
+    "features": [
+      "Requirements analysis & wireframing",
+      "Agile development methodology",
+      "Web & desktop application development",
+      "Database design & optimization",
+      "API development & integrations",
+      "Post-launch support & SLA"
+    ],
+    "whyUs": "We own the full production lifecycle — from requirement gathering to deployment and beyond — ensuring consistency, accountability, and a single point of contact."
+  },
+  {
+    "id": 6,
+    "slug": "mobile-application-development",
+    "title": "Mobile Application Development",
+    "shortDesc": "We work to create stunning iPhone, iPad, Android Smartphone and tablet apps, developing projects for independent entrepreneurs.",
+    "image": "/assets/srv/mobile-app.png",
+    "heroColor": "from-pink-900 to-rose-800",
+    "badge": "Mobile",
+    "longDesc": "Topform Technologies develops high-performance native and cross-platform mobile applications for iOS and Android. Whether you're building a consumer app or an enterprise solution, our team brings your vision to life with polished UX and solid engineering.\n\nWe use React Native and Flutter for cross-platform efficiency, and Swift/Kotlin for fully native performance-critical apps. Our apps are published to both the App Store and Google Play with full store optimization.",
+    "features": [
+      "iOS (Swift) & Android (Kotlin) native apps",
+      "React Native & Flutter cross-platform",
+      "UI/UX design & prototyping",
+      "App Store & Play Store submission",
+      "Push notification & offline support",
+      "Performance testing & QA"
+    ],
+    "whyUs": "We combine design thinking with technical excellence to build apps that users love and businesses rely on — with transparent timelines and fixed-price engagements."
+  },
+  {
+    "id": 7,
+    "slug": "home-office-it-solutions",
+    "title": "Home & Office IT Solutions",
+    "shortDesc": "We offer Home & industry leading IT solutions and support to a diverse client portfolio across industry sectors including financial services, pharmaceutical, professional services, retail and hospitality.",
+    "image": "/assets/srv/home-office.png",
+    "heroColor": "from-cyan-900 to-teal-800",
+    "badge": "IT Support",
+    "longDesc": "Topform Technologies is your one-stop shop for all home and office IT needs in Dubai. From setting up a home network to deploying enterprise-grade Wi-Fi across a corporate campus, our certified engineers have you covered.\n\nWe provide hardware procurement, installation, repair, and ongoing managed IT support. Our AMC (Annual Maintenance Contract) packages keep your systems running at peak performance 365 days a year.",
+    "features": [
+      "Network setup & Wi-Fi deployment",
+      "PC, laptop & server repair",
+      "Printer & peripheral setup",
+      "Structured cabling & rack setup",
+      "Annual Maintenance Contracts (AMC)",
+      "On-site & remote IT support"
+    ],
+    "whyUs": "Our team responds within hours, not days. We offer flexible AMC packages to suit startups, SMEs, and large enterprises — with dedicated account managers for each client."
+  },
+  {
+    "id": 8,
+    "slug": "hardware-software-sales",
+    "title": "Hardware & Software Sales",
+    "shortDesc": "We Best Hardware Consultant in dubai, and we also provide software services, we are one stop solution for all Your Hardware & Software Needs.",
+    "image": "/assets/srv/hardware-software.png",
+    "heroColor": "from-yellow-900 to-amber-800",
+    "badge": "Sales",
+    "longDesc": "Topform Technologies is an authorized reseller of leading global brands including HP, Dell, Cisco, Lenovo, Microsoft, and more. We help businesses procure the right hardware and licensed software at competitive prices, backed by official warranties.\n\nOur consultants assess your requirements, recommend the optimal products, and handle delivery, installation, and configuration — so you can focus on running your business rather than managing IT procurement.",
+    "features": [
+      "Laptops, desktops & workstations",
+      "Servers, NAS & storage solutions",
+      "Networking equipment (Cisco, TP-Link, Ubiquiti)",
+      "Licensed Microsoft & business software",
+      "Printers, scanners & peripherals",
+      "Bulk procurement & corporate deals"
+    ],
+    "whyUs": "As an authorized partner of major vendors, we offer genuine products with full warranty support, competitive pricing, and post-sale technical assistance."
+  },
+  {
+    "id": 9,
+    "slug": "erp-inventory-applications",
+    "title": "ERP & Inventory Applications",
+    "shortDesc": "ERP helps businesses make better decisions by providing accurate inventory data. ERP inventory management systems enable businesses to control their logistics, operations, finance.",
+    "image": "/assets/srv/erp.png",
+    "heroColor": "from-indigo-900 to-blue-900",
+    "badge": "ERP",
+    "longDesc": "Topform Technologies develops and deploys TopSoft — our proprietary ERP platform — as well as third-party ERP solutions such as SAP, Zoho, and Odoo. Our ERP implementations streamline your entire business: inventory, sales, purchasing, HR, payroll, POS, and finance, all in one unified system.\n\nTopSoft is UAE VAT-compliant by default and includes modules for restaurants, retail, garages, tailoring, and more — making it a versatile choice for diverse industries across the region.",
+    "features": [
+      "Inventory & stock management",
+      "Sales, purchase & billing automation",
+      "HRM & payroll with UAE WPS compliance",
+      "UAE VAT & GST India integration",
+      "Point-of-Sale (POS) module",
+      "Custom module development"
+    ],
+    "whyUs": "We don't just sell software — we implement it, train your team, and stay on-call for support. Our TopSoft platform is battle-tested across 100+ businesses in the UAE."
+  }
+]

@@ -7,8 +7,8 @@
                 "href": "/"
             },
             {
-                "name": "About",
-                "href": "/about"
+                "name": "About Us",
+                "href": "/about-us"
             },
             {
                 "name": "Service",
@@ -59,8 +59,8 @@
                 ]
             },
             {
-                "name": "Contact",
-                "href": "/contact"
+                "name": "Contact Us",
+                "href": "/contact-us"
             }
         ],
         "cta": {
@@ -129,7 +129,7 @@
             "href": "/about"
         },
         "image": {
-            "src": "/assets/abt.png",
+            "src": "/assets/abt.jpg",
             "alt": "Technology team collaborating in modern office"
         },
         "imgBg": {

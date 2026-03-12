@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "name": "Varun Kumar Thapliyal",
+    "role": "CEO, Reliance AI",
+    "image": "https://i.pravatar.cc/100?img=1",
+    "message": "Working with them has been a game changer for our organization. Their commitment to safeguarding our data and ensuring compliance has given us peace of mind."
+  },
+  {
+    "id": 2,
+    "name": "Rahul Sharma",
+    "role": "Founder, TechNova",
+    "image": "https://i.pravatar.cc/100?img=2",
+    "message": "Their expertise and proactive approach enhanced our security posture and built trust with our clients."
+  },
+  {
+    "id": 3,
+    "name": "Anjali Mehta",
+    "role": "CTO, SecureNet",
+    "image": "https://i.pravatar.cc/100?img=3",
+    "message": "Highly professional team. Strongly recommended."
+  },
+  {
+    "id": 4,
+    "name": "David Lee",
+    "role": "Manager, CloudSys",
+    "image": "https://i.pravatar.cc/100?img=4",
+    "message": "Amazing experience working with them. Very reliable."
+  }
+]

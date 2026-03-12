@@ -5,7 +5,7 @@ import Data from '../../data.json'
 
 const certify = () => {
     return (
-        <><div className='max-w-7xl px-28 '>
+        <><div className='max-w-7xl px-28 ' id="certification">
 
         </div>
             <div className='mx-auto px-20  max-sm:px-2 max-sm:py-2 shadow-2xl py-8  flex justify-center items-center w-full h-auto bg-amber-50'>

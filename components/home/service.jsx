@@ -51,7 +51,7 @@ const Service = () => {
                             </span>
                         </div>
                         <h2 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight mb-6" style={{ whiteSpace: 'pre-line' }}>
-                            {serviceData.title} <span className="text-blue-600">{serviceData.titleHighlight}</span>
+                            {serviceData.title} <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500">{serviceData.titleHighlight}</span>
                         </h2>
                         <p className="text-md text-gray-600 mb-2 leading-relaxed max-w-2xl mx-auto lg:mx-0">
                             {serviceData.description}
