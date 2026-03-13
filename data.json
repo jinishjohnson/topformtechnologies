@@ -16,27 +16,27 @@
                 "sublinks": [
                     {
                         "name": "CCTV & Security",
-                        "href": "/service#cctv"
+                        "href": "/service/cctv-security-systems"
                     },
                     {
                         "name": "Access Control",
-                        "href": "/service#door-access"
+                        "href": "/service/door-access-tna-systems"
                     },
                     {
                         "name": "PABX & Telephone",
-                        "href": "/service#pabx"
+                        "href": "/service/pabx-telephone-systems"
                     },
                     {
                         "name": "Web Design",
-                        "href": "/service#webdesign"
+                        "href": "/service/website-design-development"
                     },
                     {
                         "name": "Software Development",
-                        "href": "/service#software"
+                        "href": "/service/custom-software-development"
                     },
                     {
                         "name": "ERP Systems",
-                        "href": "/service#erp"
+                        "href": "/service/erp-systems"
                     }
                 ]
             },
@@ -45,16 +45,12 @@
                 "href": "/company",
                 "sublinks": [
                     {
-                        "name": "Company Profile",
-                        "href": "/about"
-                    },
-                    {
                         "name": "Carrers",
                         "href": "/company#vision"
                     },
                     {
-                        "name": "Certifications",
-                        "href": "/about#certifications"
+                        "name": "Gallery",
+                        "href": "/gallery"
                     }
                 ]
             },
@@ -284,27 +280,66 @@
         "card": [
             {
                 "id": 1,
-                "title": "cctv & security systems",
-                "desc": "A CCTV system, or closed-circuit television, consists of a network of strategically placed cameras ",
-                "icon": "TbDeviceCctvFilled"
+                "title": "CCTV & Security Systems",
+                "desc": "A CCTV system consists of strategically placed cameras designed to record footage at key points — entryways, secure rooms, and more.",
+                "icon": "TbDeviceCctvFilled",
+                "slug": "cctv-security-systems"
             },
             {
                 "id": 2,
-                "title": "cctv & security systems",
-                "desc": "A CCTV system, or closed-circuit television, consists of a network of strategically placed cameras ",
-                "icon": "GiDoorHandle"
+                "title": "Door Access & TNA Systems",
+                "desc": "Electronic access control with biometric fingerprint, face recognition, RFID card, and PIN-based systems with real-time attendance tracking.",
+                "icon": "GiDoorHandle",
+                "slug": "door-access-tna-systems"
             },
             {
                 "id": 3,
-                "title": "cctv & security systems",
-                "desc": "A CCTV system, or closed-circuit television, consists of a network of strategically placed cameras ",
-                "icon": "LuSmartphone"
+                "title": "Mobile App Development",
+                "desc": "We create stunning iOS and Android apps — from independent entrepreneurs to large enterprise solutions, built with React Native & Flutter.",
+                "icon": "LuSmartphone",
+                "slug": "mobile-application-development"
             },
             {
                 "id": 4,
-                "title": "cctv & security systems",
-                "desc": "A CCTV system, or closed-circuit television, consists of a network of strategically placed cameras ",
-                "icon": "CgWebsite"
+                "title": "Website Design & Development",
+                "desc": "Every successful business starts with a great website. We deliver pixel-perfect, SEO-ready, mobile-first websites that convert.",
+                "icon": "CgWebsite",
+                "slug": "website-design-development"
+            },
+            {
+                "id": 5,
+                "title": "Custom Software Development",
+                "desc": "We create custom software solutions tailored to your business needs, including web applications, desktop applications, and enterprise software.",
+                "icon": "BiCustomize",
+                "slug": "custom-software-development"
+            },
+            {
+                "id": 6,
+                "title": "ERP & Inventory Applications",
+                "desc": "We create custom software solutions tailored to your business needs, including web applications, desktop applications, and enterprise software.",
+                "icon": "FcScatterPlot",
+                "slug": "erp-inventory-applications"
+            },
+            {
+                "id": 7,
+                "title": "PABX & Telephone Systems",
+                "desc": "We create custom software solutions tailored to your business needs, including web applications, desktop applications, and enterprise software.",
+                "icon": "GiTelepathy",
+                "slug": "pabx-telephone-systems"
+            },
+            {
+                "id": 8,
+                "title": "Hardware & Software Sales",
+                "desc": "We create custom software solutions tailored to your business needs, including web applications, desktop applications, and enterprise software.",
+                "icon": "IoHardwareChip",
+                "slug": "hardware-software-sales"
+            },
+            {
+                "id": 9,
+                "title": "Home & Office IT Solutions",
+                "desc": "We create custom software solutions tailored to your business needs, including web applications, desktop applications, and enterprise software.",
+                "icon": "MdHomeWork",
+                "slug": "home-office-it-solutions"
             }
         ]
     }

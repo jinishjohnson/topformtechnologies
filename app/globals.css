@@ -53,6 +53,7 @@ html {
   --radius-4xl: calc(var(--radius) * 2.6);
 }
 
+
 body {
   font-family: var(--font-poppins);
 }
@@ -152,4 +153,7 @@ body {
   html {
     @apply font-sans;
   }
+}
+.floating-btn {
+  @apply transition-all duration-300 hover:scale-110 hover:shadow-xl active:scale-95;
 }

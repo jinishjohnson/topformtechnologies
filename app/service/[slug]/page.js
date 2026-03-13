@@ -8,7 +8,8 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }) {
-    const service = servicesData.find((s) => s.slug === params.slug);
+    const { slug } = await params;
+    const service = servicesData.find((s) => s.slug === slug);
     if (!service) return {};
     return {
         title: `${service.title} | Topform Technologies`,
@@ -16,12 +17,13 @@ export async function generateMetadata({ params }) {
     };
 }
 
-export default function ServiceDetailPage({ params }) {
-    const service = servicesData.find((s) => s.slug === params.slug);
+export default async function ServiceDetailPage({ params }) {
+    const { slug } = await params;
+    const service = servicesData.find((s) => s.slug === slug);
     if (!service) notFound();
 
     return (
-        <main className="min-h-screen bg-white">
+        <main className="min-h-screen -mt-20 bg-white">
 
             {/* ── Hero Banner ── */}
             <section className={`relative bg-linear-to-br ${service.heroColor} text-white overflow-hidden`}>

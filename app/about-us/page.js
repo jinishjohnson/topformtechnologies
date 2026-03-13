@@ -5,6 +5,12 @@ import Service from "../service/page";
 import Certify from "@/components/home/certify";
 import TestimonialSection from "@/components/home/testimonials";
 import Contact from "@/components/home/contact";
+import { Metadata } from "next";
+
+export const metadata = {
+    title: "About Us | Topform Technologies",
+    description: "Topform Technologies is a leading IT company based in UAE, providing comprehensive IT solutions including CCTV, Access Control, PABX, Software Development, and more.",
+};
 
 export default function AboutPage() {
     return (

@@ -1,9 +1,11 @@
 "use client"
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Title from "../Title";
+import { gsap } from "gsap";
 
 const MapSection = () => {
     const [activeLocation, setActiveLocation] = useState(0);
+    const mapRef = useRef(null);
 
     const locations = [
         {
@@ -20,24 +22,36 @@ const MapSection = () => {
         },
     ];
 
+    useEffect(() => {
+        if (mapRef.current) {
+            // Animate only the map container with a quick scale and fade in effect when switching
+            gsap.fromTo(
+                mapRef.current,
+                { opacity: 0, scale: 0.95 },
+                { opacity: 1, scale: 1, duration: 0.5, ease: "power2.out" }
+            );
+        }
+    }, [activeLocation]);
+
     return (
-        <section className="w-full bg-gray-50 py-16 px-6 md:px-16">
+        <section className="relative w-full bg-gray-50 py-16 px-6 md:px-16 overflow-hidden">
 
 
-            <div className="w-full flex flex-col items-center mb-12">
+
+
+            <div className="relative z-10 w-full flex flex-col items-center mb-12">
                 <Title titleText="Our" titleHighlight="Locations" />
             </div>
 
-
-            <div className="flex flex-wrap justify-center gap-4 mb-10">
+            <div className="relative z-10 flex flex-wrap justify-center gap-4 mb-10">
                 {locations.map((location, index) => (
                     <button
                         key={index}
                         onClick={() => setActiveLocation(index)}
-                        className={`px-6 py-2 rounded-full text-sm font-medium transition-all duration-300 
+                        className={`px-6 py-2 rounded-full text-sm font-medium transition-all duration-300 transform
               ${activeLocation === index
-                                ? "bg-blue-600 text-white shadow-lg"
-                                : "bg-white text-gray-600 border border-gray-300 hover:bg-blue-50"
+                                ? "bg-blue-600 text-white shadow-lg scale-105"
+                                : "bg-white text-gray-600 border border-gray-300 hover:bg-blue-50 hover:scale-105"
                             }`}
                     >
                         {location.name}
@@ -45,8 +59,10 @@ const MapSection = () => {
                 ))}
             </div>
 
-
-            <div className="w-full max-w-5xl mx-auto rounded-2xl overflow-hidden shadow-xl border border-gray-200">
+            <div
+                ref={mapRef}
+                className="relative z-10 w-full max-w-5xl mx-auto rounded-2xl overflow-hidden shadow-2xl border border-gray-200"
+            >
                 <iframe
                     src={locations[activeLocation].map}
                     width="100%"

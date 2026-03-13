@@ -1,7 +1,9 @@
+
 import { Poppins, Montserrat } from "next/font/google";
 import "./globals.css";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import ScrollToTop from "../components/ScrollToTop";
 
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -21,16 +23,20 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
+
+
   return (
     <html lang="en" suppressHydrationWarning>
+
       <body
         className={`${poppins.variable} ${montserrat.variable} antialiased flex flex-col min-h-screen`}
       >
         <Navbar />
-        <main className="flex-grow pt-20 min-h-[calc(100vh-80px)]">
+        <main className="grow pt-20 min-h-[calc(100vh-80px)]">
           {children}
         </main>
         <Footer />
+        <ScrollToTop />
       </body>
     </html>
   );

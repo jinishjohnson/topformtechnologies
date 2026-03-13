@@ -1,12 +1,21 @@
 import React from 'react'
 
-const heroA = () => {
+const HeroA = () => {
     return (
-        <div className='w-screen h-7xl bg-blue-500'>
+        <section>
 
-        </div>
+            <div className='w-full h-[calc(50vh-100px)] sm:w-full sm:h-[calc(50vh-100px)] bg-blue-500'>
+
+            </div>
+            <div className='w-full h-[calc(50vh-100px)] sm:w-full sm:h-[calc(50vh-100px)] bg-blue-500'>
+
+            </div>
+            <div className='w-full h-[calc(50vh-100px)] sm:w-full sm:h-[calc(50vh-100px)] bg-blue-500'>
+
+            </div>
+        </section>
     )
 }
 
-export default heroA
+export default HeroA
 

@@ -1,4 +1,5 @@
 // import Hero from '../components/home/hero';
+// import HeroA from '@/components/home/heroA';
 import HeroNew from '@/components/home/heroNew';
 import About from '../components/home/about';
 import Service from '../components/home/service';
@@ -16,6 +17,7 @@ export default function Home() {
     <div className="flex flex-col min-h-screen -mt-20">
       {/* <Hero /> */}
       <HeroNew />
+      {/* <HeroA /> */}
       <About />
       <Service />
       <MService />
