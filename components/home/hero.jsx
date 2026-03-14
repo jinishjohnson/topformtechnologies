@@ -1,9 +1,10 @@
 'use client';
 
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { gsap } from 'gsap';
 import { useGSAP } from '@gsap/react';
 import Link from 'next/link';
+import { motion } from "motion/react"
 
 const slides = [
     {
@@ -34,16 +35,66 @@ export default function Hero() {
     const container = useRef(null);
     const textRef = useRef(null);
 
+    // Touch handlers for swipe
+    const touchStartX = useRef(null);
+    const touchStartY = useRef(null);
+    const touchEndX = useRef(null);
+    const touchEndY = useRef(null);
+
+    const minSwipeDistance = 50;
+
+    const handleTouchStart = (e) => {
+        touchEndX.current = null;
+        touchEndY.current = null;
+        touchStartX.current = e.targetTouches[0].clientX;
+        touchStartY.current = e.targetTouches[0].clientY;
+    };
+
+    const handleTouchMove = (e) => {
+        touchEndX.current = e.targetTouches[0].clientX;
+        touchEndY.current = e.targetTouches[0].clientY;
+    };
+
+    const handleTouchEnd = () => {
+        if (touchStartX.current === null || touchEndX.current === null) return;
+
+        const distanceX = touchStartX.current - touchEndX.current;
+        const distanceY = touchStartY.current - touchEndY.current;
+
+        const isHorizontalSwipe = Math.abs(distanceX) > Math.abs(distanceY);
+        // We use window width for a mobile check
+        const isMobile = typeof window !== 'undefined' && window.innerWidth < 640;
+
+        if (isMobile && isHorizontalSwipe) {
+            // Left swipe -> next
+            if (distanceX > minSwipeDistance) nextSlide();
+            // Right swipe -> prev
+            if (distanceX < -minSwipeDistance) prevSlide();
+        } else if (!isMobile && !isHorizontalSwipe) {
+            // Up swipe -> next
+            if (distanceY > minSwipeDistance) nextSlide();
+            // Down swipe -> prev
+            if (distanceY < -minSwipeDistance) prevSlide();
+        }
+    };
+
     useGSAP(() => {
         // Fade in text for current slide
         if (textRef.current && textRef.current.children) {
             gsap.fromTo(
                 textRef.current.children,
-                { x: 30, opacity: 0 },
-                { x: 0, opacity: 1, duration: 0.6, stagger: 0.15, ease: "power3.out" }
+                { y: 30, opacity: 0 },
+                { y: 0, opacity: 1, duration: 0.6, stagger: 0.15, ease: "power3.out" }
             );
         }
     }, { scope: container, dependencies: [currentSlide] });
+
+    useEffect(() => {
+        const timer = setInterval(() => {
+            setCurrentSlide((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
+        }, 5000);
+        return () => clearInterval(timer);
+    }, [currentSlide]);
 
     const nextSlide = () => {
         setCurrentSlide((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
@@ -54,25 +105,35 @@ export default function Hero() {
     };
 
     return (
-        <div ref={container} className="relative w-full h-screen min-h-[600px] overflow-hidden bg-gray-900 flex items-center">
-            {slides.map((slide, index) => (
+        <div
+            ref={container}
+            className="relative w-full h-[650px] min-h-[650px] overflow-hidden bg-gray-900 flex items-center"
+            onTouchStart={handleTouchStart}
+            onTouchMove={handleTouchMove}
+            onTouchEnd={handleTouchEnd}
+        >
+            {/* Background Slides Container */}
+            <div className="absolute inset-0 z-0">
                 <div
-                    key={index}
-                    className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${index === currentSlide ? "opacity-100 z-10" : "opacity-0 z-0"
-                        }`}
+                    className="h-full w-full transition-transform duration-1000 ease-in-out flex flex-row sm:flex-col translate-x-[var(--slide-offset)] sm:translate-x-0 sm:translate-y-[var(--slide-offset)]"
+                    style={{ '--slide-offset': `-${currentSlide * 100}%` }}
                 >
-                    <div className="absolute inset-0 bg-neutral-900/75 z-10"></div>
-                    <img
-                        src={slide.image}
-                        alt="Hero background slide"
-                        className="w-full h-full object-cover"
-                    />
+                    {slides.map((slide, index) => (
+                        <div key={index} className="relative h-full w-full shrink-0">
+                            <div className="absolute inset-0 bg-neutral-900/75 z-10"></div>
+                            <img
+                                src={slide.image}
+                                alt="Hero background slide"
+                                className="w-full h-full object-cover"
+                            />
+                        </div>
+                    ))}
                 </div>
-            ))}
+            </div>
 
             {/* Content */}
-            <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full mt-10">
-                <div className="max-w-7xl mx-auto sm:mx-0 text-center sm:text-left" ref={textRef}>
+            <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full mt-10 pointer-events-none">
+                <div className="max-w-7xl mx-auto sm:mx-0 text-center sm:text-left pointer-events-auto" ref={textRef}>
                     <div className="text-[#5CB3FF] font-thin tracking-wide mb-3 text-sm sm:text-lg">
                         {slides[currentSlide].prefix}
                     </div>
@@ -80,42 +141,62 @@ export default function Hero() {
                         {slides[currentSlide].heading}
                     </h1>
                     <div>
-                        <Link
+                        <motion.button
                             href={slides[currentSlide].href}
-                            className="inline-block bg-blue-500 hover:bg-transparent text-white font-semibold px-6 py-3 rounded-full transition-colors border border-blue-500 hover:border-blue-500 cursor-pointer"
+                            className="inline-block bg-transparent hover:bg-blue-500 text-white font-semibold px-6 py-3 rounded-full transition-all border-blue-500 border-2 hover:border-blue-500 cursor-pointer"
+                            whileHover={{ scale: 1.1 }}
+                            whileTap={{ scale: 0.9 }}
                         >
                             {slides[currentSlide].cta}
-                        </Link>
+                        </motion.button>
                     </div>
                 </div>
             </div>
 
-            <button
-                onClick={prevSlide}
-                className="absolute left-4 top-1/2 -translate-y-1/2 z-30 w-12 h-12 flex items-center justify-center bg-black/60 hover:bg-blue-500/90 cursor-pointer text-white rounded-full transition-all"
-                aria-label="Previous slide"
-            >
-                <svg className="w-5 h-5 pr-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M15 19l-7-7 7-7" /></svg>
-            </button>
+            {/* Responsive Navigation buttons */}
 
-            <button
-                onClick={nextSlide}
-                className="absolute right-4 top-1/2 -translate-y-1/2 z-30 w-12 h-12 flex items-center justify-center bg-black/60 hover:bg-blue-500/90 cursor-pointer text-white rounded-full transition-all"
-                aria-label="Next slide"
-            >
-                <svg className="w-5 h-5 pl-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" /></svg>
-            </button>
+            <div className="absolute bottom-6 left-1/2 -translate-x-1/2 sm:bottom-auto sm:left-auto sm:right-6 sm:top-1/2 sm:translate-x-0 sm:-translate-y-1/2 z-30 flex flex-row sm:flex-col items-center gap-4 sm:gap-3 pointer-events-auto">
+                <motion.button
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.9 }}
+                    onClick={prevSlide}
+                    className="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center bg-black/60 hover:bg-blue-500/90 cursor-pointer text-white rounded-full transition-all shrink-0"
+                    aria-label="Previous slide"
+                >
+                    {/* Left arrow (mobile) */}
+                    <svg className="w-5 h-5 sm:hidden pr-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M15 19l-7-7 7-7" /></svg>
+                    {/* Up arrow (desktop) */}
+                    <svg className="w-5 h-5 hidden sm:block mb-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 15l7-7 7 7" /></svg>
+                </motion.button>
 
-            <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-30 flex gap-2.5">
-                {slides.map((_, index) => (
-                    <button
-                        key={index}
-                        onClick={() => setCurrentSlide(index)}
-                        className={`w-2 rounded-full transition-all duration-300 ${index === currentSlide ? "bg-white h-7" : "bg-white/50 hover:bg-white/80 h-5"
-                            }`}
-                        aria-label={`Go to slide ${index + 1}`}
-                    />
-                ))}
+                <div className="flex flex-row sm:flex-col gap-2 sm:gap-2.5 mx-1 sm:mx-0 sm:my-2">
+                    {slides.map((_, index) => (
+                        <motion.button
+                            key={index}
+                            whileHover={{ scale: 1.1 }}
+                            whileTap={{ scale: 0.9 }}
+                            onClick={() => setCurrentSlide(index)}
+                            className={`rounded-full transition-all duration-300 ${index === currentSlide
+                                ? "bg-white w-2 h-2 sm:h-2.5 sm:w-2.5"
+                                : "bg-white/50 hover:bg-white/80 w-2 h-2 sm:h-2.5 sm:w-2.5"
+                                }`}
+                            aria-label={`Go to slide ${index + 1}`}
+                        />
+                    ))}
+                </div>
+
+                <motion.button
+                    onClick={nextSlide}
+                    className="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center bg-black/60 hover:bg-blue-500/90 cursor-pointer text-white rounded-full transition-all shrink-0"
+                    aria-label="Next slide"
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.9 }}
+                >
+                    {/* Right arrow (mobile) */}
+                    <svg className="w-5 h-5 sm:hidden pl-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" /></svg>
+                    {/* Down arrow (desktop) */}
+                    <svg className="w-5 h-5 hidden sm:block mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" /></svg>
+                </motion.button>
             </div>
         </div>
     );

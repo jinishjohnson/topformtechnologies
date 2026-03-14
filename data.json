@@ -36,7 +36,7 @@
                     },
                     {
                         "name": "ERP Systems",
-                        "href": "/service/erp-systems"
+                        "href": "/service/erp-inventory-applications"
                     }
                 ]
             },
@@ -46,7 +46,7 @@
                 "sublinks": [
                     {
                         "name": "Carrers",
-                        "href": "/company#vision"
+                        "href": "/company/careers"
                     },
                     {
                         "name": "Gallery",
@@ -113,6 +113,42 @@
             "text": "TopSoft Demo",
             "href": "/contact"
         }
+    },
+    "hero": {
+        "title": "Scale at Speed",
+        "highlight": "with Topsoft",
+        "description": "Our promise to help enterprises across industries transform at speed and bring agility, resilience, and efficiency to their businesses.",
+        "buttons": [
+            {
+                "label": "Know More",
+                "link": "/know-more",
+                "variant": "primary"
+            },
+            {
+                "label": "Our Brand Story",
+                "link": "/brand-story",
+                "variant": "outline"
+            }
+        ],
+        "image": "/assets/Topsoft.webp"
+    },
+    "herob": {
+        "title": "Scale at Speed",
+        "highlight": "with Topsoft",
+        "description": "Our promise to help enterprises across industries transform at speed and bring agility, resilience, and efficiency to their businesses.",
+        "buttons": [
+            {
+                "label": "Know More",
+                "link": "/know-more",
+                "variant": "primary"
+            },
+            {
+                "label": "Our Brand Story",
+                "link": "/brand-story",
+                "variant": "outline"
+            }
+        ],
+        "image": "/assets/toptime.png"
     },
     "about": {
         "badge": "Who We Are",

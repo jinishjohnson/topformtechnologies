@@ -3,7 +3,6 @@ import React, { useState } from 'react'
 import { gsap } from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { useRef } from 'react';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { motion, AnimatePresence } from 'framer-motion';
 
 import { FcDataProtection } from "react-icons/fc";
