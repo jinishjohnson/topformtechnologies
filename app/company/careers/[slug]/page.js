@@ -1,9 +1,26 @@
 import React from "react";
 import Link from "next/link";
 import { careers } from "../openingsConfig";
+import ApplyButton from "@/components/ApplyButton";
 
-const CareerDetailPage = ({ params }) => {
-  const { slug } = params;
+export async function generateMetadata({ params }) {
+  const { slug } = await params;
+  const job = careers.find((c) => c.slug === slug);
+  const title = job ? `${job.title} | Careers at Topform Technologies` : "Career Opportunity | Topform Technologies";
+  return {
+    title,
+    description: job?.intro || "Join our team at Topform Technologies and build your future with an innovative IT company in Dubai.",
+  };
+}
+
+export async function generateStaticParams() {
+  return careers.map((job) => ({
+    slug: job.slug,
+  }));
+}
+
+const CareerDetailPage = async ({ params }) => {
+  const { slug } = await params;
   const job =
     careers.find((c) => c.slug === slug) || {
       title: String(slug || "career-opportunity").replace(/-/g, " "),
@@ -42,16 +59,11 @@ const CareerDetailPage = ({ params }) => {
                   <span className="inline-flex items-center rounded-full bg-emerald-50 px-3 py-1 text-emerald-700">
                     {job.salary}
                   </span>
-                )}
+              )}
               </div>
             </div>
 
-            <a
-              href="mailto:hr@topformtechnologies.com?subject=Application%20for%20position"
-              className="inline-flex items-center justify-center rounded-full bg-blue-600 px-5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-blue-700 transition-colors"
-            >
-              Apply Now
-            </a>
+            <ApplyButton jobTitle={job.title} />
           </div>
 
           <p className="text-gray-700 mb-8">{job.intro}</p>

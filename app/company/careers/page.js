@@ -4,12 +4,19 @@ import Image from "next/image";
 import { careers } from "./openingsConfig";
 import Title from "@/components/Title";
 
+
+export const metadata = {
+  title: "Careers | Topform Technologies",
+  description:
+    "Explore open roles across engineering, design, field service, and marketing. Click a position to see full details and how to apply.",
+};
+
 const CareersPage = () => {
   return (
     <div className="w-full min-h-screen flex flex-col items-center bg-gray-50/50 py-20">
       <div className="w-[90%] max-w-6xl mx-auto">
         <div className="mb-10 text-center">
-          <Title titleText="Current" titleHighlight="Openings"/>
+          <Title titleText="Current" titleHighlight="Openings" />
           <p className="text-gray-600 text-left max-w-2xl ">
             Explore open roles across engineering, design, field service, and
             marketing. Click a position to see full details and how to apply.

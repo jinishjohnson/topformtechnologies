@@ -5,9 +5,13 @@ import Link from "next/link";
 import data from '../../data.json';
 import { motion } from "framer-motion";
 import { FcTimeline } from "react-icons/fc";
+import { useLanguage } from "../LanguageContext";
 
 export default function HeroA() {
-    const hero = data.herob;
+    const { lang, t } = useLanguage();
+    const heroA = t?.hero || data.hero;
+    const { title, highlight, description, buttons, image } = heroA;
+    const isRtl = lang === "ar";
 
     return (
         <motion.section
@@ -38,7 +42,7 @@ export default function HeroA() {
                 />
                 {/* LEFT IMAGE / RIGHT IMAGE reversed */}
                 <motion.div
-                    initial={{ opacity: 0, y: 30, scale: 0.95 }}
+                    initial={{ opacity: 0, y: isRtl ? -30 : 30, scale: 0.95 }}
                     whileInView={{ opacity: 1, y: 0, scale: 1 }}
                     viewport={{ once: true, amount: 0.3 }}
                     transition={{ duration: 0.9, ease: "easeInOut" }}
@@ -70,7 +74,7 @@ export default function HeroA() {
                         className="relative w-[220px] h-[220px] md:w-[360px] md:h-[360px]"
                     >
                         <Image
-                            src={hero.image}
+                            src={image}
                             alt="hero"
                             fill
                             priority
@@ -144,7 +148,7 @@ export default function HeroA() {
                             transition={{ duration: 0.9, ease: "easeInOut" }}
                             className="text-white"
                         >
-                            {hero.title}
+                            {title}
                         </motion.span>
                         <br />
                         <motion.span
@@ -154,7 +158,7 @@ export default function HeroA() {
                             transition={{ duration: 1, ease: "easeInOut" }}
                             className="text-white"
                         >
-                            {hero.highlight}
+                            {highlight}
                         </motion.span>
                     </motion.h1>
 
@@ -165,7 +169,7 @@ export default function HeroA() {
                         transition={{ duration: 1, ease: "easeInOut", delay: 0.05 }}
                         className="mt-6 text-white max-w-lg"
                     >
-                        {hero.description}
+                        {description}
                     </motion.p>
 
                     {/* Buttons */}
@@ -176,11 +180,11 @@ export default function HeroA() {
                         transition={{ duration: 1, ease: "easeInOut", delay: 0.1 }}
                         className="flex gap-4 mt-8 max-sm:justify-center"
                     >
-                        {hero.buttons.map((btn, i) => (
+                        {buttons.map((btn, i) => (
                             <Link
                                 key={i}
                                 href={btn.link}
-                                className={ 
+                                className={
                                     btn.variant === "primary"
                                         ? "bg-white text-blue-600 px-6 py-3 rounded-full text-sm font-semibold transition-transform hover:scale-105"
                                         : "border border-white text-white px-6 py-3 rounded-full text-sm font-semibold transition-transform hover:scale-105"

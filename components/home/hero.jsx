@@ -6,31 +6,11 @@ import { useGSAP } from '@gsap/react';
 import Link from 'next/link';
 import { motion } from "motion/react"
 
-const slides = [
-    {
-        prefix: "ERP & Inventory Systems",
-        heading: "Efficient ERP &\nInventory\nManagement",
-        image: "https://images.unsplash.com/photo-1556740738-b6a63e27c4df?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        cta: "Contact Us",
-        href: "/contact"
-    },
-    {
-        prefix: "Data Analytics Solutions",
-        heading: "Real-time Metrics &\nPerformance\nTracking",
-        image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=2426&ixlib=rb-4.0.3",
-        cta: "Learn More",
-        href: "/service"
-    },
-    {
-        prefix: "Automated Workflows",
-        heading: "Streamline Your\nBusiness\nProcesses",
-        image: "https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&q=80&w=2070&ixlib=rb-4.0.3",
-        cta: "Discover Features",
-        href: "/topsoft-demo"
-    }
-];
+import { useLanguage } from '../LanguageContext';
 
 export default function Hero() {
+    const { lang, t } = useLanguage();
+    const slides = t.hero.slides || [];
     const [currentSlide, setCurrentSlide] = useState(0);
     const container = useRef(null);
     const textRef = useRef(null);
@@ -133,7 +113,7 @@ export default function Hero() {
 
             {/* Content */}
             <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full mt-10 pointer-events-none">
-                <div className="max-w-7xl mx-auto sm:mx-0 text-center sm:text-left pointer-events-auto" ref={textRef}>
+                <div className="max-w-7xl mx-auto sm:mx-0 text-center sm:text-left rtl:sm:text-right pointer-events-auto" ref={textRef}>
                     <div className="text-[#5CB3FF] font-thin tracking-wide mb-3 text-sm sm:text-lg">
                         {slides[currentSlide].prefix}
                     </div>
@@ -155,16 +135,16 @@ export default function Hero() {
 
             {/* Responsive Navigation buttons */}
 
-            <div className="absolute bottom-6 left-1/2 -translate-x-1/2 sm:bottom-auto sm:left-auto sm:right-6 sm:top-1/2 sm:translate-x-0 sm:-translate-y-1/2 z-30 flex flex-row sm:flex-col items-center gap-4 sm:gap-3 pointer-events-auto">
+            <div className="absolute bottom-6 left-1/2 -translate-x-1/2 sm:bottom-auto md:hidden lg:hidden sm:left-auto sm:right-6 rtl:sm:right-auto rtl:sm:left-6 sm:top-1/2 sm:translate-x-0 sm:-translate-y-1/2 z-30 flex flex-row sm:flex-col items-center gap-4 sm:gap-3 pointer-events-auto">
                 <motion.button
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.9 }}
                     onClick={prevSlide}
-                    className="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center bg-black/60 hover:bg-blue-500/90 cursor-pointer text-white rounded-full transition-all shrink-0"
+                    className="w-10 h-10 sm:w-12 sm:h-12  flex items-center justify-center bg-black/60 hover:bg-blue-500/90 cursor-pointer text-white rounded-full transition-all shrink-0"
                     aria-label="Previous slide"
                 >
                     {/* Left arrow (mobile) */}
-                    <svg className="w-5 h-5 sm:hidden pr-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M15 19l-7-7 7-7" /></svg>
+                    <svg className="w-5 h-5 sm:hidden pr-0.5 rtl:pr-0 rtl:pl-0.5 rtl:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M15 19l-7-7 7-7" /></svg>
                     {/* Up arrow (desktop) */}
                     <svg className="w-5 h-5 hidden sm:block mb-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 15l7-7 7 7" /></svg>
                 </motion.button>
@@ -193,7 +173,7 @@ export default function Hero() {
                     whileTap={{ scale: 0.9 }}
                 >
                     {/* Right arrow (mobile) */}
-                    <svg className="w-5 h-5 sm:hidden pl-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" /></svg>
+                    <svg className="w-5 h-5 sm:hidden pl-0.5 rtl:pl-0 rtl:pr-0.5 rtl:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" /></svg>
                     {/* Down arrow (desktop) */}
                     <svg className="w-5 h-5 hidden sm:block mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" /></svg>
                 </motion.button>

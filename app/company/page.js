@@ -3,7 +3,6 @@ import CompanyHero from "@/components/CompanyHero";
 import CompnayBody from "@/components/CompnayBody";
 
 
-import { Metadata } from "next";
 
 export const metadata = {
     title: "Company | Topform Technologies",

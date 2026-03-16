@@ -1,6 +1,6 @@
 export const careers = [
   {
-    slug: "sofware-developer",
+    slug: "software-developer",
     title: "Software Developer",
     location: "Dubai, UAE",
     type: "Full-time · On-site",
@@ -63,7 +63,7 @@ export const careers = [
     ],
   },
   {
-    slug: "digital-markerter",
+    slug: "digital-marketer",
     title: "Digital Marketer",
     location: "Dubai, UAE",
     type: "Full-time · Hybrid",

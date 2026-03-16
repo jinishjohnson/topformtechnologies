@@ -4,14 +4,18 @@ import Image from "next/image";
 import Link from "next/link";
 import data from '../../data.json';
 import { motion } from "framer-motion";
+import { useLanguage } from "../LanguageContext";
 
 export default function Hero() {
-    const hero = data.hero;
+    const { lang, t } = useLanguage();
+    const heroB = t?.herob || data.herob;
+    const { title, highlight, description, buttons, image } = heroB;
+    const isRtl = lang === "ar";
 
     return (
-        <section className="w-full  bg-gradient-to-br from-[#3f8cff] via-[#1f5fbf] to-[#0a2f6b] relative overflow-hidden">
+        <section className="w-full bg-linear-to-br from-[#3f8cff] via-[#1f5fbf] to-[#0a2f6b] relative overflow-hidden">
             {/* Background SVG Pattern */}
-            <div className="absolute inset-0 z-0 opacity-20 MixBlendMode-overlay">
+            <div className="absolute inset-0 z-0 opacity-20  mix-blend-overlay">
                 <Image
                     src="/assets/circuit-board.svg"
                     alt="circuit background"
@@ -20,28 +24,28 @@ export default function Hero() {
                 />
             </div>
 
-            <div className="max-w-7xl mx-auto grid md:grid-cols-2  h-[450px] max-sm:h-[650px] items-center min-h-[550px]">
+            <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center h-[450px] max-sm:h-[650px] min-h-[550px] relative">
 
-                {/* LEFT CONTENT */}
-                <div className="px-6 max-md:px-12 max-sm:text-center  py-12 z-10">
+                {/* CONTENT AREA */}
+                <div className={`w-full md:w-1/2 px-6 max-md:px-12 py-12 z-10 ${isRtl ? 'text-right' : 'text-left'} max-sm:text-center order-2 md:order-1`}>
                     <motion.h1
-                        initial={{ opacity: 0, x: -50 }}
+                        initial={{ opacity: 0, x: isRtl ? 50 : -50 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.8, ease: "easeOut" }}
                         className="text-4xl md:text-5xl font-bold leading-tight"
                     >
-                        <span className="text-white">{hero.title}</span>
+                        <span className="text-white">{title}</span>
                         <br />
-                        <span className="text-white">{hero.highlight}</span>
+                        <span className="text-blue-200">{highlight}</span>
                     </motion.h1>
 
                     <motion.p
-                        initial={{ opacity: 0, x: -50 }}
+                        initial={{ opacity: 0, x: isRtl ? 50 : -50 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-                        className="mt-6 text-white max-w-lg"
+                        className={`mt-6 text-white/90 text-lg max-w-lg ${isRtl ? 'mr-0 ml-auto' : 'ml-0 mr-auto'} max-sm:mx-auto`}
                     >
-                        {hero.description}
+                        {description}
                     </motion.p>
 
                     {/* Buttons */}
@@ -49,16 +53,16 @@ export default function Hero() {
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
-                        className="flex gap-4 mt-8"
+                        className={`flex gap-4 mt-8 ${isRtl ? 'justify-end' : 'justify-start'} max-sm:justify-center`}
                     >
-                        {hero.buttons.map((btn, i) => (
+                        {buttons && buttons.map((btn, i) => (
                             <Link
                                 key={i}
                                 href={btn.link}
                                 className={
                                     btn.variant === "primary"
-                                        ? "bg-white text-blue-600 px-6 py-3 rounded-full text-sm font-semibold transition-transform hover:scale-105"
-                                        : "border border-white text-white px-6 py-3 rounded-full text-sm font-semibold transition-transform hover:scale-105"
+                                        ? "bg-white text-blue-600 px-8 py-3.5 rounded-full text-sm font-bold transition-all hover:shadow-xl hover:shadow-white/20 hover:-translate-y-1 active:scale-95"
+                                        : "border-2 border-white/30 backdrop-blur-sm text-white px-8 py-3.5 rounded-full text-sm font-bold transition-all hover:bg-white/10 hover:-translate-y-1 active:scale-95"
                                 }
                             >
                                 {btn.label}
@@ -67,22 +71,20 @@ export default function Hero() {
                     </motion.div>
                 </div>
 
-                {/* RIGHT IMAGE */}
+                {/* IMAGE AREA */}
                 <motion.div
-                    initial={{ opacity: 0, x: 100, scale: 1 }}
-                    animate={{ opacity: 1, x: 0, scale: 1 }}
-                    transition={{ duration: 0.6, ease: "easeOut", delay: 0.3 }}
-                    className="relative w-full h-[400px] scale-150 translate-x-50 max-sm:h-[400px] max-sm:scale-100 max-sm:translate-x-0 max-sm:-translate-y-10 max-md:h-[400px]"
+                    initial={{ opacity: 0, x: isRtl ? -100 : 100 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 1, ease: "easeOut", delay: 0.3 }}
+                    className={`relative w-full md:w-1/2 h-[400px] order-1 md:order-2 flex justify-center items-center overflow-visible`}
                 >
-                    {/* angled background */}
-                    <div className="absolute inset-0 bg-transparent clip-path-hero "></div>
-
                     <Image
-                        src={hero.image}
-                        alt="hero"
-                        fill
+                        src={image}
+                        alt="hero background"
+                        width={800}
+                        height={600}
                         priority
-                        className="object-contain w-full h-full"
+                        className={`object-contain transition-transform duration-700  ${isRtl ? '-translate-x-25' : 'translate-x-25'} scale-125 max-sm:scale-100 max-sm:translate-x-0`}
                     />
                 </motion.div>
             </div>

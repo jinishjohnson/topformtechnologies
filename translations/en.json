@@ -1,4 +1,9 @@
 {
+    "seo": {
+        "title": "Topform Technologies | Leading IT & Security Solutions in Dubai, UAE",
+        "description": "Dubai's premier provider of CCTV, IT infrastructure, and custom software. Specializing in SIRA/ADMCC certified security systems and Topsoft ERP solutions.",
+        "keywords": "CCTV installation Dubai, IT services UAE, SIRA certified CCTV, ERP software Dubai, CRM systems, Software development UAE, Topform Technologies"
+    },
     "navbar": {
         "brandName": "TopForm",
         "links": [
@@ -130,7 +135,44 @@
                 "variant": "outline"
             }
         ],
-        "image": "/assets/toptime.png"
+        "card": [
+            {
+                "title": "Real-time Tracking",
+                "desc": "Live activity and KPI snapshots."
+            },
+            {
+                "title": "Automation",
+                "desc": "Reduce manual steps with smart workflows."
+            },
+            {
+                "title": "Better Decisions",
+                "desc": "Reports that turn data into action."
+            }
+        ],
+        "image": "/assets/toptime.png",
+        "slides": [
+            {
+                "prefix": "ERP & Inventory Systems",
+                "heading": "Efficient ERP &\nInventory\nManagement",
+                "image": "https://images.unsplash.com/photo-1556740738-b6a63e27c4df?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                "cta": "Contact Us",
+                "href": "/contact"
+            },
+            {
+                "prefix": "Data Analytics Solutions",
+                "heading": "Real-time Metrics &\nPerformance\nTracking",
+                "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=2426&ixlib=rb-4.0.3",
+                "cta": "Learn More",
+                "href": "/service"
+            },
+            {
+                "prefix": "Automated Workflows",
+                "heading": "Streamline Your\nBusiness\nProcesses",
+                "image": "https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&q=80&w=2070&ixlib=rb-4.0.3",
+                "cta": "Discover Features",
+                "href": "/topsoft-demo"
+            }
+        ]
     },
     "herob": {
         "title": "Scale at Speed",
@@ -148,7 +190,7 @@
                 "variant": "outline"
             }
         ],
-        "image": "/assets/toptime.png"
+        "image": "/assets/Topsoft.webp"
     },
     "about": {
         "badge": "Who We Are",

@@ -5,7 +5,7 @@ import Service from "../service/page";
 import Certify from "@/components/home/certify";
 import TestimonialSection from "@/components/home/testimonials";
 import Contact from "@/components/home/contact";
-import { Metadata } from "next";
+
 
 export const metadata = {
     title: "About Us | Topform Technologies",

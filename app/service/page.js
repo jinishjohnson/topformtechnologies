@@ -3,7 +3,6 @@ import Title from "@/components/Title";
 import ServiceGrid from "@/components/ServiceGrid";
 import data from "../../data.json";
 import Counter from "@/components/ui/counter";
-import { Metadata } from "next";
 import Contact from "@/components/home/contact";
 
 export const metadata = {
@@ -51,7 +50,7 @@ export default function Service({ hideBanner }) {
                         </div>
                     </div>
                 </div>
-                <Contact />
+                {!hideBanner && <Contact />}
             </div>
         </div>
     );
