@@ -3,6 +3,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { gsap } from 'gsap';
 import { useGSAP } from '@gsap/react';
+import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from "motion/react"
 
@@ -101,10 +102,12 @@ export default function Hero() {
                     {slides.map((slide, index) => (
                         <div key={index} className="relative h-full w-full shrink-0">
                             <div className="absolute inset-0 bg-neutral-900/75 z-10"></div>
-                            <img
+                            <Image
                                 src={slide.image}
                                 alt="Hero background slide"
-                                className="w-full h-full object-cover"
+                                className="w-full h-full object-cover animation-zoom"
+                                width={1920}
+                                height={1080}
                             />
                         </div>
                     ))}

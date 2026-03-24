@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import ScrollToTop from "../components/ScrollToTop";
+import ScrollStatus from "../components/ScrollStatus";
 
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -54,6 +55,7 @@ export default function RootLayout({ children }) {
           className={`${poppins.variable} ${montserrat.variable} antialiased flex flex-col min-h-screen`}
         >
           <Navbar />
+          <ScrollStatus />
           <main className="grow pt-20 min-h-[calc(100vh-80px)]">
             {children}
           </main>

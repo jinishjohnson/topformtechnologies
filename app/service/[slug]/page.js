@@ -67,7 +67,7 @@ export default async function ServiceDetailPage({ params }) {
                                 src={service.image}
                                 alt={service.title}
                                 fill
-                                className="object-contain relative z-10 drop-shadow-2xl"
+                                className="object-cover rounded-2xl relative z-10 drop-shadow-2xl animate-scale-up transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-blue-600"
                             />
                         </div>
                     </div>

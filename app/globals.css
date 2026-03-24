@@ -6,6 +6,11 @@
 
 html {
   scroll-behavior: smooth;
+  scrollbar-width: none;
+}
+
+::-webkit-scrollbar {
+  display: none;
 }
 
 @theme inline {
@@ -154,6 +159,62 @@ body {
     @apply font-sans;
   }
 }
+
 .floating-btn {
   @apply transition-all duration-300 hover:scale-110 hover:shadow-xl active:scale-95;
+}
+
+/* Custom animations for Hero Sections */
+@keyframes shimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes float-slow {
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+.animate-float-slow {
+  animation: float-slow 6s ease-in-out infinite;
+}
+
+.animate-float-delayed {
+  animation: float-slow 7s ease-in-out infinite 2s;
+}
+
+.animate-float-fast {
+  animation: float-slow 5s ease-in-out infinite 1s;
+}
+
+@keyframes orb-float {
+
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+
+  33% {
+    transform: translate(30px, -30px) scale(1.05);
+  }
+
+  66% {
+    transform: translate(-20px, 20px) scale(0.95);
+  }
+}
+
+.animate-orb-slow {
+  animation: orb-float 15s ease-in-out infinite;
+}
+
+.animate-orb-delayed {
+  animation: orb-float 18s ease-in-out infinite 7s;
 }

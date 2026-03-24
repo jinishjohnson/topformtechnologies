@@ -85,7 +85,7 @@
                 "variant": "outline"
             }
         ],
-        "image": "/assets/Topsoft.webp",
+        "image": "/assets/toptime.png",
         "slides": [
             {
                 "prefix": "أنظمة تخطيط موارد المؤسسات والمخزون",
@@ -126,7 +126,7 @@
                 "variant": "outline"
             }
         ],
-        "image": "/assets/Topsoft.webp"
+        "image": "/assets/toptime.png"
     },
     "about": {
         "badge": "من نحن",
@@ -139,7 +139,7 @@
             "href": "/about"
         },
         "image": {
-            "src": "/assets/abt.jpg",
+            "src": "/assets/abt.png",
             "alt": "فريق تكنولوجيا يتعاون في مكتب حديث"
         },
         "imgBg": {
@@ -206,7 +206,7 @@
                 "id": 5,
                 "title": "تطوير البرمجيات المخصصة",
                 "desc": "نحن نؤمن أنه على الرغم من أن تطوير التطبيقات المستندة إلى الويب مع النشر السحابي يكتسب زخماً، إلا أنه يمكن استخدامها على الأجهزة المستقلة فقط",
-                "image": "/assets/srv/custom-soft.png"
+                "image": "/assets/srv/custom-soft.jpg"
             },
             {
                 "id": 6,

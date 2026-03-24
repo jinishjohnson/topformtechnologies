@@ -5,6 +5,7 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
 import { useLanguage } from '../LanguageContext';
+import Image from 'next/image';
 
 if (typeof window !== "undefined") {
     gsap.registerPlugin(ScrollTrigger);
@@ -13,7 +14,7 @@ if (typeof window !== "undefined") {
 const About = () => {
 
     const { lang, t } = useLanguage();
-    const about = t?.about || {}; 
+    const about = t?.about || {};
     const isRtl = lang === 'ar';
 
     const containerRef = useRef(null);
@@ -76,7 +77,7 @@ const About = () => {
                         {/* Decorative background image */}
                         {about.imgBg && (
                             <div ref={bgRef} className={`absolute z-[-1] opacity-20 -top-10 ${isRtl ? 'left-0.5' : 'right-0.5'} w-full`}>
-                                <img src={about.imgBg.src} alt={about.imgBg.alt} className="w-[320px] translate-y-20 object-cover" />
+                                <Image width={500} height={500} src={about.imgBg.src} alt={about.imgBg.alt} className="w-[320px] h-[320px]  translate-y-10 object-contain" />
                             </div>
                         )}
 
@@ -115,7 +116,9 @@ const About = () => {
                                 <div className="absolute -inset-4 bg-linear-to-r from-blue-600/20 to-cyan-500/20 opacity-0 group-hover:opacity-100 blur-xl transition duration-500"></div>
 
                                 {about.image && (
-                                    <img
+                                    <Image
+                                        width={500}
+                                        height={500}
                                         src={about.image.src}
                                         alt={about.image.alt}
                                         className="relative z-10 w-full h-auto max-h-[500px] object-cover rounded-3xl transform transition duration-700 group-hover:scale-105"

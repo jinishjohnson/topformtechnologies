@@ -247,7 +247,7 @@ export default function Navbar() {
                             {lang === 'en' ? 'عربي' : 'English'}
                         </button>
 
-                        <Link
+                        {/* <Link
                             href={navbar.cta.href}
                             className={`
                                 inline-flex items-center px-4 py-1 rounded-full text-sm font-semibold
@@ -259,7 +259,7 @@ export default function Navbar() {
                             `}
                         >
                             {navbar.cta.text}
-                        </Link>
+                        </Link> */}
                     </div>
                 </div>
             </header>

@@ -120,7 +120,7 @@
         }
     },
     "hero": {
-        "title": "Scale at Speed",
+        "title": "Scale at Speed1",
         "highlight": "with Topsoft",
         "description": "Our promise to help enterprises across industries transform at speed and bring agility, resilience, and efficiency to their businesses.",
         "buttons": [
@@ -154,21 +154,21 @@
             {
                 "prefix": "ERP & Inventory Systems",
                 "heading": "Efficient ERP &\nInventory\nManagement",
-                "image": "https://images.unsplash.com/photo-1556740738-b6a63e27c4df?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                "image": "/assets/hero1.png",
                 "cta": "Contact Us",
                 "href": "/contact"
             },
             {
                 "prefix": "Data Analytics Solutions",
                 "heading": "Real-time Metrics &\nPerformance\nTracking",
-                "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=2426&ixlib=rb-4.0.3",
+                "image": "/assets/hero2.png",
                 "cta": "Learn More",
                 "href": "/service"
             },
             {
                 "prefix": "Automated Workflows",
                 "heading": "Streamline Your\nBusiness\nProcesses",
-                "image": "https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&q=80&w=2070&ixlib=rb-4.0.3",
+                "image": "/assets/hero3.png",
                 "cta": "Discover Features",
                 "href": "/topsoft-demo"
             }
@@ -190,7 +190,7 @@
                 "variant": "outline"
             }
         ],
-        "image": "/assets/Topsoft.webp"
+        "image": "/assets/topsoft.png"
     },
     "about": {
         "badge": "Who We Are",
@@ -203,7 +203,7 @@
             "href": "/about"
         },
         "image": {
-            "src": "/assets/abt.jpg",
+            "src": "/assets/abt.png",
             "alt": "Technology team collaborating in modern office"
         },
         "imgBg": {
@@ -302,37 +302,37 @@
                 "id": 2,
                 "title": "Door Access & TNA Systems",
                 "desc": "As a company expands, security takes on greater significance. Traditionally, door locks have been used to provide access to the office or building, We also offer electronic access control with sliding and swing doors,",
-                "image": "/assets/srv/Door-Access-TNA-Systems.png"
+                "image": "/assets/srv/Door Access & TNA Systems.png"
             },
             {
                 "id": 3,
                 "title": "PABX & Telephone Systems",
                 "desc": "One technology that's commonly employed in the telecom sector is IP PBX. Another name for it is IP-PBX, or IP-based private branch exchange. It is regarded as the replacement for older phone systems.",
-                "image": "/assets/srv/telephone.png"
+                "image": "/assets/srv/tele.png"
             },
             {
                 "id": 4,
                 "title": "Website Design & Development",
                 "desc": "Every successful business starts with a great website and we deliver you the same. Being the top-notch Website Designing Company In Dubai.",
-                "image": "/assets/srv/webdesign.png"
+                "image": "/assets/srv/web.jpg"
             },
             {
                 "id": 5,
                 "title": "Custom Software Developments",
                 "desc": "We believe that although web-based application development with cloud deployment is gaining ground, which could be used on standalone machines only",
-                "image": "/assets/srv/custom-soft.png"
+                "image": "/assets/srv/custom-soft.jpg"
             },
             {
                 "id": 6,
                 "title": "Mobile Application Development",
                 "desc": "We work to create stunning iPhone, iPad, Android Smartphone and tablet apps, developing projects for independent entrepreneurs.",
-                "image": "/assets/srv/mobile-app.png"
+                "image": "/assets/srv/mobileapp.png"
             },
             {
                 "id": 7,
                 "title": "Home & Office It Sollutions",
                 "desc": "We offer Home & industry leading IT solutions and support to a diverse client portfolio across industry sectors including financial services, pharmaceutical, professional services, retail and hospitality",
-                "image": "/assets/srv/home-office.png"
+                "image": "/assets/srv/home.jpg"
             },
             {
                 "id": 8,
@@ -344,7 +344,7 @@
                 "id": 9,
                 "title": "ERP & Inventory Applications",
                 "desc": "ERP helps businesses make better decisions by providing accurate inventory data. ERP inventory management systems enable businesses to control their logistics, operations, finance,",
-                "image": "/assets/srv/erp.png"
+                "image": "/assets/srv/erp.jpg"
             }
         ]
     },
